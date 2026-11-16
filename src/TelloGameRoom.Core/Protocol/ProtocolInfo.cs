@@ -36,4 +36,16 @@ public static class ErrorCodes
     public const string InvalidPairingCode = "invalid_pairing_code";
     public const string ProtocolMismatch = "protocol_mismatch";
     public const string RateLimited = "rate_limited";
+    public const string MachineBusy = "machine_busy";
+    public const string MachineOffline = "machine_offline";
+    public const string MachineDisabled = "machine_disabled";
+    public const string NoOpenSession = "no_open_session";
+    public const string InvalidSessionState = "invalid_session_state";
+    public const string PriceChanged = "price_changed";
+    public const string ReasonRequired = "reason_required";
+    public const string ShiftRequired = "shift_required";
+    public const string ShiftAlreadyOpen = "shift_already_open";
+    public const string NoOpenShift = "no_open_shift";
+    public const string Timeout = "timeout";
+    public const string LastOwner = "last_owner";
 }

@@ -35,7 +35,6 @@ public sealed class Session
 
     public bool IsFree { get; set; }
     public string? FreeReason { get; set; }
-    public bool WarningSent { get; set; }
 
     /// <summary>Optimistic concurrency token, incremented on every change.</summary>
     public int Version { get; set; }

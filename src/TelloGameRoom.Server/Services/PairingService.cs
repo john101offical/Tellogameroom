@@ -59,6 +59,35 @@ public sealed class PairingService(AppDbContext db, AuditService audit, TimeProv
         return (new PairingCodeResponse(SecretTokens.FormatPairingCode(code), expires, name), PairingError.None);
     }
 
+    /// <summary>Creates a code that re-registers an existing machine with a fresh secret.</summary>
+    public async Task<PairingCodeResponse?> CreateRepairCodeAsync(Guid branchId, Guid machineId, CurrentUser user, CancellationToken ct)
+    {
+        var machine = await db.Machines.AsNoTracking().FirstOrDefaultAsync(m => m.Id == machineId && m.BranchId == branchId, ct);
+        if (machine is null)
+        {
+            return null;
+        }
+
+        var now = time.GetUtcNow().UtcDateTime;
+        await db.PairingCodes.Where(c => c.MachineId == machineId && c.UsedAtUtc == null).ExecuteDeleteAsync(ct);
+        var code = SecretTokens.NewPairingCode();
+        var expires = now.AddMinutes(security.Value.PairingCodeMinutes);
+        db.PairingCodes.Add(new PairingCode
+        {
+            Id = Guid.CreateVersion7(),
+            BranchId = branchId,
+            CodeHash = SecretTokens.Hash(code),
+            MachineName = machine.Name,
+            MachineId = machineId,
+            CreatedByUserId = user.Id,
+            CreatedAtUtc = now,
+            ExpiresAtUtc = expires,
+        });
+        audit.Record(AuditActions.PairingCodeCreated, user.Id, user.Username, branchId, machineId, machine.Name, reason: "repair");
+        await db.SaveChangesAsync(ct);
+        return new PairingCodeResponse(SecretTokens.FormatPairingCode(code), expires, machine.Name);
+    }
+
     public async Task<(PairMachineResponse? Response, PairingError Error)> PairAsync(PairMachineRequest request, CancellationToken ct)
     {
         var now = time.GetUtcNow().UtcDateTime;
@@ -82,29 +111,44 @@ public sealed class PairingService(AppDbContext db, AuditService audit, TimeProv
 
         var code = await db.PairingCodes.FirstAsync(c => c.CodeHash == hash, ct);
         var branch = await db.Branches.AsNoTracking().FirstAsync(b => b.Id == code.BranchId, ct);
-        if (await db.Machines.AnyAsync(m => m.BranchId == code.BranchId && m.Name == code.MachineName, ct))
+        var secret = SecretTokens.NewToken();
+        Machine machine;
+        if (code.MachineId is { } existingId)
         {
-            // Rolls back the claim as well.
-            return (null, PairingError.NameTaken);
+            // Repair code: the machine keeps its identity and history but gets a new secret.
+            machine = await db.Machines.FirstAsync(m => m.Id == existingId, ct);
+            machine.TokenHash = SecretTokens.Hash(secret);
+            machine.HostName = Trim(request.HostName, 100) ?? machine.HostName;
+            machine.OsVersion = Trim(request.OsVersion, 100) ?? machine.OsVersion;
+            machine.AppVersion = Trim(request.AppVersion, 32) ?? machine.AppVersion;
+            audit.Record(AuditActions.MachineTokenReset, code.CreatedByUserId, branchId: code.BranchId, machineId: machine.Id, machineName: machine.Name);
+        }
+        else
+        {
+            if (await db.Machines.AnyAsync(m => m.BranchId == code.BranchId && m.Name == code.MachineName, ct))
+            {
+                // Rolls back the claim as well.
+                return (null, PairingError.NameTaken);
+            }
+
+            machine = new Machine
+            {
+                Id = Guid.CreateVersion7(),
+                BranchId = code.BranchId,
+                Name = code.MachineName,
+                GroupId = code.GroupId,
+                TokenHash = SecretTokens.Hash(secret),
+                HostName = Trim(request.HostName, 100),
+                OsVersion = Trim(request.OsVersion, 100),
+                AppVersion = Trim(request.AppVersion, 32),
+                CreatedAtUtc = now,
+            };
+            db.Machines.Add(machine);
+            code.MachineId = machine.Id;
+            audit.Record(AuditActions.MachinePaired, code.CreatedByUserId, branchId: code.BranchId, machineId: machine.Id,
+                machineName: machine.Name, newValue: machine.HostName);
         }
 
-        var secret = SecretTokens.NewToken();
-        var machine = new Machine
-        {
-            Id = Guid.CreateVersion7(),
-            BranchId = code.BranchId,
-            Name = code.MachineName,
-            GroupId = code.GroupId,
-            TokenHash = SecretTokens.Hash(secret),
-            HostName = Trim(request.HostName, 100),
-            OsVersion = Trim(request.OsVersion, 100),
-            AppVersion = Trim(request.AppVersion, 32),
-            CreatedAtUtc = now,
-        };
-        db.Machines.Add(machine);
-        code.MachineId = machine.Id;
-        audit.Record(AuditActions.MachinePaired, code.CreatedByUserId, branchId: code.BranchId, machineId: machine.Id,
-            machineName: machine.Name, newValue: machine.HostName);
         await db.SaveChangesAsync(ct);
         await tx.CommitAsync(ct);
 

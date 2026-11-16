@@ -31,9 +31,35 @@ public sealed class TelloFactory : WebApplicationFactory<Program>
     public const string OwnerUsername = "owner";
     public const string OwnerPassword = "owner-password-1";
 
-    private readonly string _dataDirectory = Path.Combine(Path.GetTempPath(), "tello-tests", Guid.NewGuid().ToString("N"));
+    private readonly string _dataDirectory;
+    private bool _ownsDirectory;
 
-    public MutableTimeProvider Clock { get; } = new();
+    public TelloFactory()
+        : this(null, null)
+    {
+    }
+
+    /// <summary>Starts a server on an existing data directory, as a restarted server process would.</summary>
+    public TelloFactory(string? dataDirectory, MutableTimeProvider? clock)
+    {
+        _ownsDirectory = dataDirectory is null;
+        _dataDirectory = dataDirectory ?? Path.Combine(Path.GetTempPath(), "tello-tests", Guid.NewGuid().ToString("N"));
+        Clock = clock ?? new MutableTimeProvider();
+    }
+
+    public string DataDirectory => _dataDirectory;
+
+    /// <summary>Access token lifetime. Tests that move the clock far ahead raise it so they are not signed out mid-test.</summary>
+    public int AccessTokenMinutes { get; init; } = 15;
+
+    /// <summary>Keeps the data directory on dispose so another factory can "restart" on it.</summary>
+    public string DetachDataDirectory()
+    {
+        _ownsDirectory = false;
+        return _dataDirectory;
+    }
+
+    public MutableTimeProvider Clock { get; }
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
@@ -42,6 +68,7 @@ public sealed class TelloFactory : WebApplicationFactory<Program>
         builder.UseSetting("Security:Argon2MemoryKb", "1024");
         builder.UseSetting("Security:Argon2Iterations", "1");
         builder.UseSetting("Security:AuthRateLimitPerMinute", "100000");
+        builder.UseSetting("Jwt:AccessTokenMinutes", AccessTokenMinutes.ToString(System.Globalization.CultureInfo.InvariantCulture));
         builder.ConfigureServices(services =>
         {
             services.RemoveAll<TimeProvider>();
@@ -52,7 +79,7 @@ public sealed class TelloFactory : WebApplicationFactory<Program>
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        if (disposing)
+        if (disposing && _ownsDirectory)
         {
             SqliteConnection.ClearAllPools();
             try

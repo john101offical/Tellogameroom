@@ -11,6 +11,8 @@ using TelloGameRoom.Core.Protocol;
 using TelloGameRoom.Server.Data;
 using TelloGameRoom.Server.Endpoints;
 using TelloGameRoom.Server.Infrastructure;
+using TelloGameRoom.Server.Realtime;
+using TelloGameRoom.Server.Reports;
 using TelloGameRoom.Server.Security;
 using TelloGameRoom.Server.Services;
 
@@ -25,6 +27,10 @@ var storage = builder.Configuration.GetSection(StorageOptions.Section).Get<Stora
 var dataDirectory = Path.GetFullPath(storage.DataDirectory);
 Directory.CreateDirectory(dataDirectory);
 builder.Services.PostConfigure<StorageOptions>(o => o.DataDirectory = dataDirectory);
+
+// A restore staged by the owner is applied here, before anything opens the database.
+var restoreApplied = BackupService.ApplyPendingRestore(dataDirectory);
+QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
 // ---- Logging -------------------------------------------------------------------------------------------------
 builder.Services.AddSerilog((_, config) => config
@@ -54,6 +60,25 @@ builder.Services.AddScoped<AuditService>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<SetupService>();
 builder.Services.AddScoped<PairingService>();
+builder.Services.AddSingleton<MachinePresence>();
+builder.Services.AddSingleton<SessionGate>();
+builder.Services.AddScoped<StateService>();
+builder.Services.AddScoped<RealtimeNotifier>();
+builder.Services.AddScoped<SessionService>();
+builder.Services.AddHostedService<SessionExpiryWorker>();
+builder.Services.AddSingleton<ScreenshotBroker>();
+builder.Services.AddScoped<RemoteService>();
+builder.Services.AddScoped<ShiftService>();
+builder.Services.AddScoped<EmployeeService>();
+builder.Services.AddScoped<ReportService>();
+builder.Services.AddSingleton<BackupService>();
+builder.Services.AddHostedService<DailyBackupWorker>();
+builder.Services.AddSignalR(o =>
+    {
+        o.KeepAliveInterval = TimeSpan.FromSeconds(10);
+        o.ClientTimeoutInterval = TimeSpan.FromSeconds(30);
+    })
+    .AddJsonProtocol(o => o.PayloadSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
 builder.Services.ConfigureHttpJsonOptions(o => o.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 builder.Services.AddProblemDetails();
@@ -129,6 +154,10 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
 var app = builder.Build();
 
 await app.Services.InitializeDatabaseAsync();
+if (restoreApplied)
+{
+    app.Logger.LogWarning("A database restore was applied at startup. The previous database was kept in the backups folder.");
+}
 
 app.UseForwardedHeaders();
 app.UseSerilogRequestLogging();
@@ -160,6 +189,17 @@ var api = app.MapGroup(ProtocolInfo.ApiPrefix);
 api.MapSetupEndpoints();
 api.MapAuthEndpoints();
 api.MapMachineEndpoints();
+api.MapSessionEndpoints();
+api.MapRemoteEndpoints();
+api.MapShiftEndpoints();
+api.MapEmployeeEndpoints();
+api.MapAuditEndpoints();
+api.MapReportEndpoints();
+api.MapSettingsEndpoints();
+
+// Dashboards reconnect with a fresh token when theirs expires, so a deactivated employee is cut off within minutes.
+app.MapHub<DashboardHub>(ProtocolInfo.DashboardHubPath, o => o.CloseOnAuthenticationExpiration = true);
+app.MapHub<MachineHub>(ProtocolInfo.MachineHubPath);
 
 await app.RunAsync();
 

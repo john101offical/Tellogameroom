@@ -371,9 +371,6 @@ namespace TelloGameRoom.Server.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("WarningSent")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
                     b.HasIndex("MachineId")
