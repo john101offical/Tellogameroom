@@ -1,0 +1,17 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+TestResults/
+# runtime data and secrets never belong in the repo
+data/
+*.db
+*.db-shm
+*.db-wal
+logs/
+*.key
+.env
+appsettings.*.local.json
+deploy/installer/Output/
