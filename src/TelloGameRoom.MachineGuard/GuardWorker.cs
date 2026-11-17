@@ -126,16 +126,21 @@ public sealed class GuardWorker(ILogger<GuardWorker> logger, IConfiguration conf
             {
                 await using var server = CreatePipe();
                 await server.WaitForConnectionAsync(ct);
-                if (!IsFromMachineApp(server))
+                if (!IsFromMachineApp(server, out var client))
                 {
-                    logger.LogWarning("Ignored a pipe message that did not come from the Machine app");
+                    logger.LogWarning("Ignored a pipe connection from {Client}: only {Exe} may send messages", client, _machineExe);
                     continue;
                 }
 
-                using var reader = new StreamReader(server, Encoding.UTF8);
+                using var reader = new StreamReader(server, new UTF8Encoding(false), leaveOpen: true);
+                using var writer = new StreamWriter(server, new UTF8Encoding(false), leaveOpen: true);
                 using var timeout = CancellationTokenSource.CreateLinkedTokenSource(ct);
                 timeout.CancelAfter(TimeSpan.FromSeconds(2));
-                Handle(await reader.ReadLineAsync(timeout.Token));
+                var accepted = Handle(await reader.ReadLineAsync(timeout.Token));
+
+                // Acknowledge, so the app can wait for this before it exits.
+                await writer.WriteLineAsync(accepted ? "OK" : "UNKNOWN");
+                await writer.FlushAsync(timeout.Token);
             }
             catch (OperationCanceledException) when (ct.IsCancellationRequested)
             {
@@ -148,7 +153,8 @@ public sealed class GuardWorker(ILogger<GuardWorker> logger, IConfiguration conf
         }
     }
 
-    private void Handle(string? message)
+    /// <returns>True when the message was understood.</returns>
+    private bool Handle(string? message)
     {
         var session = UserSession.ActiveSessionId();
         lock (_sync)
@@ -166,26 +172,33 @@ public sealed class GuardWorker(ILogger<GuardWorker> logger, IConfiguration conf
                     logger.LogWarning("Maintenance mode: the Machine app was closed with the admin PIN. The guard stands down until the next sign-in.");
                     break;
                 default:
-                    logger.LogDebug("Unknown pipe message {Message}", message);
-                    break;
+                    logger.LogWarning("Unknown pipe message {Message}", message);
+                    return false;
             }
         }
+
+        logger.LogInformation("Received {Message} from the Machine app", message?.Trim());
+        return true;
     }
 
     /// <summary>The app runs as a standard user and the service as SYSTEM, so the pipe must let interactive users write to it.</summary>
     private static NamedPipeServerStream CreatePipe()
     {
         var security = new PipeSecurity();
+        // ReadWrite, not just Write: opening a pipe from .NET also asks for read-permissions and read-attributes rights,
+        // and the guard writes an "OK" back so the app knows its message arrived. Only the installed Machine
+        // executable is listened to (see IsFromMachineApp), whoever opens the pipe.
         security.AddAccessRule(new PipeAccessRule(new SecurityIdentifier(WellKnownSidType.InteractiveSid, null),
-            PipeAccessRights.Write | PipeAccessRights.Synchronize, AccessControlType.Allow));
+            PipeAccessRights.ReadWrite | PipeAccessRights.Synchronize, AccessControlType.Allow));
         security.AddAccessRule(new PipeAccessRule(new SecurityIdentifier(WellKnownSidType.LocalSystemSid, null),
             PipeAccessRights.FullControl, AccessControlType.Allow));
-        return NamedPipeServerStreamAcl.Create(PipeName, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 256, 256, security);
+        return NamedPipeServerStreamAcl.Create(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 256, 256, security);
     }
 
     /// <summary>Only the installed Machine executable may talk to the guard, so a script cannot switch it off.</summary>
-    private bool IsFromMachineApp(NamedPipeServerStream server)
+    private bool IsFromMachineApp(NamedPipeServerStream server, out string client)
     {
+        client = "an unknown process";
         try
         {
             if (!Native.GetNamedPipeClientProcessId(server.SafePipeHandle.DangerousGetHandle(), out var processId))
@@ -194,10 +207,12 @@ public sealed class GuardWorker(ILogger<GuardWorker> logger, IConfiguration conf
             }
 
             using var process = Process.GetProcessById((int)processId);
-            return string.Equals(process.MainModule?.FileName, _machineExe, StringComparison.OrdinalIgnoreCase);
+            client = process.MainModule?.FileName ?? $"process {processId}";
+            return string.Equals(Path.GetFullPath(client), _machineExe, StringComparison.OrdinalIgnoreCase);
         }
         catch (Exception ex) when (ex is ArgumentException or InvalidOperationException or System.ComponentModel.Win32Exception)
         {
+            client = ex.Message;
             return false;
         }
     }
