@@ -12,7 +12,7 @@
 #>
 param(
     [string]$Version = "0.1.0",
-    [string]$InnoSetup = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+    [string]$InnoSetup = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -31,9 +31,23 @@ Publish-Project "TelloGameRoom.Dashboard" "Dashboard"
 Publish-Project "TelloGameRoom.Machine" "Machine"
 Publish-Project "TelloGameRoom.MachineGuard" "Machine"
 
-if (-not (Test-Path $InnoSetup)) {
-    throw "Inno Setup was not found at '$InnoSetup'. Install Inno Setup 6 or pass -InnoSetup."
+if (-not $InnoSetup) {
+    # Inno Setup can be installed for all users (either Program Files folder) or just for the current user.
+    $candidates = @(
+        "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe",
+        "$env:ProgramFiles\Inno Setup 6\ISCC.exe",
+        "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe"
+    )
+    $onPath = Get-Command ISCC.exe -ErrorAction SilentlyContinue
+    if ($onPath) { $candidates = @($onPath.Source) + $candidates }
+    $InnoSetup = $candidates | Where-Object { $_ -and (Test-Path $_) } | Select-Object -First 1
 }
+
+if (-not $InnoSetup -or -not (Test-Path $InnoSetup)) {
+    throw "Inno Setup 6 was not found. Install it with 'winget install JRSoftware.InnoSetup' (or from https://jrsoftware.org/isdl.php), or pass -InnoSetup <path to ISCC.exe>."
+}
+
+Write-Host "Using Inno Setup at $InnoSetup"
 
 $env:TELLO_VERSION = $Version
 foreach ($script in "Dashboard.iss", "Machine.iss") {
