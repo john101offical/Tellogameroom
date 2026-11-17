@@ -122,8 +122,8 @@ public sealed class ServerLink : IAsyncDisposable
         _hub.Reconnected += _ => OnConnectedAsync();
 
         var hub = _hub;
-        var token = _connection.Token;
-        _loop = Task.Run(() => RunAsync(hub, token));
+        var cancel = _connection.Token;
+        _loop = Task.Run(() => RunAsync(hub, cancel));
     }
 
     public async Task UploadScreenshotAsync(string requestId, byte[] jpeg)
