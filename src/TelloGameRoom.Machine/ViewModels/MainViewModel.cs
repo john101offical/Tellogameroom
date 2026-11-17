@@ -142,6 +142,22 @@ public sealed partial class MainViewModel : ObservableObject
 
     public bool HasAdminPin => !string.IsNullOrEmpty(_config?.AdminPinHash);
 
+    /// <summary>
+    /// A PC that has never been paired cannot know the shop's admin PIN, and it is not selling anything, so it may be
+    /// closed without one. Once paired, the PIN (cached locally) is always required.
+    /// </summary>
+    public bool CanExitWithoutPin => Screen == MachineScreen.Pairing && !HasAdminPin && _store.LoadIdentity() is null;
+
+    /// <summary>Closes a PC that was never paired.</summary>
+    public void ExitUnpaired()
+    {
+        if (CanExitWithoutPin)
+        {
+            Log.Information("Closed from the pairing screen of a PC that was never paired");
+            ExitAuthorized?.Invoke();
+        }
+    }
+
     /// <summary>True while the lock screen must cover the desktop.</summary>
     public bool IsLockScreenRequired => Screen != MachineScreen.Active;
 
@@ -291,7 +307,11 @@ public sealed partial class MainViewModel : ObservableObject
         return Loc.T("Pin_Wrong");
     }
 
-    partial void OnScreenChanged(MachineScreen value) => OnPropertyChanged(nameof(IsLockScreenRequired));
+    partial void OnScreenChanged(MachineScreen value)
+    {
+        OnPropertyChanged(nameof(IsLockScreenRequired));
+        RefreshTexts();
+    }
 
     private void Tick()
     {
@@ -439,7 +459,9 @@ public sealed partial class MainViewModel : ObservableObject
         RefreshTexts();
     }
 
-    private void RefreshTexts() => ConnectionText = LinkStatus switch
+    private void RefreshTexts() => ConnectionText = Screen == MachineScreen.Pairing
+        ? Loc.T("Conn_NotPaired")
+        : LinkStatus switch
     {
         LinkStatus.Connected => Loc.T("Conn_Connected"),
         LinkStatus.Connecting => Loc.T("Conn_Connecting"),
