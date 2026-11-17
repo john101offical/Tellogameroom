@@ -154,7 +154,12 @@ public sealed partial class ShellViewModel : ObservableObject
         }
 
         CurrentPage = value.Page;
-        _ = ActivateAsync(value.Page);
+
+        // Right after sign-in the branch is still loading; SwitchBranchAsync activates the page once it has arrived.
+        if (Context.BranchId != Guid.Empty)
+        {
+            _ = ActivateAsync(value.Page);
+        }
     }
 
     partial void OnSelectedBranchChanged(BranchSummary? value)

@@ -228,6 +228,7 @@ public sealed partial class BranchContext : ObservableObject
     public void Clear()
     {
         Machines.Clear();
+        BranchId = Guid.Empty;
         OnDuty = [];
         OnDutyText = string.Empty;
         SummaryText = string.Empty;

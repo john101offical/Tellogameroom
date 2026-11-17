@@ -11,6 +11,10 @@
 {
 	# Do not try to install the root certificate inside the container.
 	skip_install_trust
+
+	# Clients that connect by IP address send no server name in the TLS handshake. Tell Caddy which
+	# certificate to present in that case; without this the handshake fails behind Docker's private network.
+	default_sni {$TELLO_ADDRESS}
 }
 
 https://{$TELLO_ADDRESS} {
