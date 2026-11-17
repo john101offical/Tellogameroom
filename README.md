@@ -1,32 +1,29 @@
 # TelloGameRoom
 
 Game room / internet café management. Customers pay cash per hour at the counter; staff start a timer on a PC
-from the dashboard; the PC locks when the time runs out.
+from the Dashboard; the PC locks when the time runs out. One server can run several branches.
 
 | Project | What it is | Runs on |
 |---|---|---|
-| `TelloGameRoom.Server` | ASP.NET Core API + SignalR. The single source of truth. | Linux VPS |
+| `TelloGameRoom.Server` | ASP.NET Core API + SignalR. The single source of truth. | Linux VPS (Docker or systemd) |
 | `TelloGameRoom.Dashboard` | WPF app for the owner and employees. | Windows 10/11 |
 | `TelloGameRoom.Machine` | WPF lock screen and floating timer on each gaming PC. | Windows 10/11 |
 | `TelloGameRoom.MachineGuard` | Windows Service that keeps the Machine app running. | Windows 10/11 |
-| `TelloGameRoom.Core` | Shared contracts: DTOs, enums, permissions, billing maths. | everywhere |
-| `TelloGameRoom.Tests` | xUnit unit and integration tests. | CI |
+| `TelloGameRoom.Core` | Shared contracts: DTOs, permissions, billing maths, the offline timer. | everywhere |
+| `TelloGameRoom.Tests` | xUnit unit, integration and end-to-end tests. | CI |
 
 ## Status
 
-Built in phases. **Phase 1 is done**: solution skeleton, Core contracts, database schema and migrations, and the
-server with authentication, permissions and machine pairing. The Windows apps are empty shells until Phases 3 and 4.
+All eight phases are implemented.
 
-| Phase | Scope | State |
-|---|---|---|
-| 1 | Skeleton, contracts, schema, auth | done |
-| 2 | Session and timer engine | next |
-| 3 | Machine app MVP | |
-| 4 | Dashboard MVP | |
-| 5 | Remote control, messaging, audit log UI | |
-| 6 | Employees, shifts, cash reconciliation | |
-| 7 | Reports, charts, exports, settings | |
-| 8 | Polish, translations, lock-down, installers, deployment | |
+**Verified by automated tests (171 tests):** the server, its API and SignalR flow, billing, permissions, shifts,
+reports, exports, backup and restore, restart recovery, the client-side offline timer logic, and a scale test with
+100 simulated machines and 10 dashboards.
+
+**Compiled but not yet run:** the three Windows programs (Dashboard, Machine, MachineGuard) were developed on Linux,
+where WPF and Windows Services cannot be launched. They build without warnings, but their screens, the lock-down
+behaviour and the installers must be tried on a real Windows PC before the shop depends on them. The Docker image
+has likewise not been built here; CI builds it. See "First run on Windows" in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
 ## Build and test
 
@@ -40,23 +37,45 @@ dotnet build
 dotnet test
 ```
 
-The WPF projects and the Windows Service compile on Linux and macOS, but only run on Windows.
-
-## Run the server locally
+## Try the server locally
 
 ```bash
 dotnet run --project src/TelloGameRoom.Server
 ```
 
-The server creates `data/` (database, logs, generated signing key) in the working directory, applies migrations and
-listens on the URL printed at startup. Check `GET /health`, then `GET /api/v1/setup/status`.
-
-Configuration is read from `appsettings.json` and environment variables (`Storage__DataDirectory`,
-`Jwt__SigningKey`, `Security__TrustedProxies__0`, ...). No secret is ever stored in this repository.
+It creates `data/` (database, logs, signing key, backups) in the working directory and prints the URL it listens on.
+Then start the Dashboard on Windows, enter that address (with `http://` for a local test), and follow the setup wizard.
 
 ## Documentation
 
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): how the pieces fit, the data model and the decisions taken.
-- [docs/PROTOCOL.md](docs/PROTOCOL.md): the versioned REST and SignalR contract.
+| Document | Contents |
+|---|---|
+| [docs/USER_GUIDE.md](docs/USER_GUIDE.md) | How staff and the owner use the system day to day. |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | VPS setup, TLS without a domain name, firewall, backups, installers. |
+| [docs/HARDENING.md](docs/HARDENING.md) | What the lock-down does and does not prevent, and how to harden the PCs. |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Design, data model, security, decisions. |
+| [docs/PROTOCOL.md](docs/PROTOCOL.md) | The versioned REST and SignalR contract. |
 
-Deployment, hardening and user guides are written in Phase 8.
+## Repository layout
+
+```
+src/        the five projects
+tests/      xUnit tests
+docs/       documentation
+deploy/     Dockerfile, docker-compose, Caddy, nginx, systemd, installer scripts, backup script
+tools/      resx generator and translation checker
+```
+
+## Translations
+
+UI strings live in `src/*/Resources/strings.json` as `"Key": ["English", "Español"]`. After editing:
+
+```bash
+python3 tools/resx.py src/TelloGameRoom.Dashboard/Resources
+```
+
+```bash
+python3 tools/check_strings.py src/TelloGameRoom.Dashboard src/TelloGameRoom.Machine
+```
+
+The first regenerates the `.resx` files; the second fails if the code uses a key that has no text.

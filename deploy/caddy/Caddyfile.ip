@@ -1,0 +1,33 @@
+# For a server reached by IP address only (no domain name).
+#
+# Public certificate authorities such as Let's Encrypt do not issue ordinary certificates for bare IP addresses,
+# so Caddy acts as its own small authority here. Traffic is fully encrypted. To also be sure they are talking to
+# *your* server, the Dashboard and Machine apps "pin" the fingerprint of Caddy's root certificate:
+#
+#   sh deploy/caddy/fingerprint.sh
+#
+# Type that fingerprint once on each client (or pass it to the installer with /FINGERPRINT=...).
+
+{
+	# Do not try to install the root certificate inside the container.
+	skip_install_trust
+}
+
+https://{$TELLO_ADDRESS} {
+	tls internal
+	encode zstd gzip
+
+	# WebSockets (SignalR) and REST both go to the server.
+	reverse_proxy server:8080
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		-Server
+	}
+}
+
+# Plain HTTP only redirects to HTTPS.
+http://{$TELLO_ADDRESS} {
+	redir https://{$TELLO_ADDRESS}{uri} permanent
+}
