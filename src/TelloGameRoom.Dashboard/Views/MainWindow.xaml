@@ -1,0 +1,32 @@
+<ui:FluentWindow x:Class="TelloGameRoom.Dashboard.Views.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:vm="clr-namespace:TelloGameRoom.Dashboard.ViewModels"
+                 xmlns:v="clr-namespace:TelloGameRoom.Dashboard.Views"
+                 Title="TelloGameRoom" Width="1360" Height="840" MinWidth="1020" MinHeight="640"
+                 WindowStartupLocation="CenterScreen" ExtendsContentIntoTitleBar="True" WindowBackdropType="None"
+                 Background="{DynamicResource ApplicationBackgroundBrush}" Icon="/app.ico">
+  <ui:FluentWindow.Resources>
+    <DataTemplate DataType="{x:Type vm:ConnectViewModel}">
+      <v:ConnectView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SetupViewModel}">
+      <v:SetupView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+      <v:LoginView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ShellViewModel}">
+      <v:ShellView />
+    </DataTemplate>
+  </ui:FluentWindow.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <ui:TitleBar Title="TelloGameRoom" />
+    <ContentControl Grid.Row="1" Content="{Binding Current}" Focusable="False" />
+  </Grid>
+</ui:FluentWindow>

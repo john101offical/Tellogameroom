@@ -1,0 +1,68 @@
+<ui:FluentWindow x:Class="TelloGameRoom.Dashboard.Views.PromptWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:l="clr-namespace:TelloGameRoom.Dashboard"
+                 Width="480" SizeToContent="Height" ResizeMode="NoResize" ShowInTaskbar="False"
+                 WindowStartupLocation="CenterOwner" ExtendsContentIntoTitleBar="True" WindowBackdropType="None">
+  <ui:FluentWindow.Resources>
+    <l:NotEmptyVisibilityConverter x:Key="NotEmpty" />
+    <l:BoolVisibilityConverter x:Key="BoolVisible" />
+  </ui:FluentWindow.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <ui:TitleBar x:Name="Bar" ShowMaximize="False" ShowMinimize="False" />
+    <StackPanel Grid.Row="1" Margin="24,4,24,24">
+      <TextBlock Text="{Binding Message}" Style="{StaticResource Body}" Visibility="{Binding Message, Converter={StaticResource NotEmpty}}" />
+
+      <!-- Large text to read aloud or copy, e.g. a pairing code -->
+      <Border Style="{StaticResource Card}" Margin="0,16,0,0" Padding="16" Visibility="{Binding BigText, Converter={StaticResource NotEmpty}}">
+        <TextBox Text="{Binding BigText, Mode=OneWay}" IsReadOnly="True" BorderThickness="0" Background="Transparent" TextAlignment="Center"
+                 FontFamily="{StaticResource MonoFont}" FontSize="34" FontWeight="SemiBold" />
+      </Border>
+
+      <!-- Pick one -->
+      <StackPanel Visibility="{Binding HasChoices, Converter={StaticResource BoolVisible}}">
+        <TextBlock Text="{Binding ChoiceLabel}" Style="{StaticResource FieldLabel}" />
+        <ComboBox x:Name="ChoiceBox" ItemsSource="{Binding Choices}" DisplayMemberPath="Label" SelectedItem="{Binding SelectedChoice}" />
+      </StackPanel>
+
+      <!-- One-click texts -->
+      <ItemsControl ItemsSource="{Binding QuickTexts}" Margin="0,12,0,0" Visibility="{Binding HasQuickTexts, Converter={StaticResource BoolVisible}}">
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <WrapPanel />
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <ui:Button Content="{Binding}" Margin="0,0,8,8" Click="OnQuickText" />
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+
+      <StackPanel Visibility="{Binding InputLabel, Converter={StaticResource NotEmpty}}">
+        <TextBlock Text="{Binding InputLabel}" Style="{StaticResource FieldLabel}" />
+        <ui:TextBox x:Name="InputBox" Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="{Binding InputPlaceholder}"
+                    MaxLength="{Binding MaxLength}" Visibility="{Binding IsPassword, Converter={StaticResource BoolVisible}, ConverterParameter=invert}" />
+        <ui:PasswordBox x:Name="SecretBox" MaxLength="{Binding MaxLength}" Visibility="{Binding IsPassword, Converter={StaticResource BoolVisible}}" />
+      </StackPanel>
+
+      <StackPanel Visibility="{Binding SecondInputLabel, Converter={StaticResource NotEmpty}}">
+        <TextBlock Text="{Binding SecondInputLabel}" Style="{StaticResource FieldLabel}" />
+        <ui:TextBox Text="{Binding SecondInput, UpdateSourceTrigger=PropertyChanged}" MaxLength="500" />
+      </StackPanel>
+
+      <TextBlock x:Name="ErrorLabel" Style="{StaticResource ErrorText}" Visibility="Collapsed" />
+
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,24,0,0">
+        <ui:Button Content="{l:Tr Common_Cancel}" IsCancel="True" Margin="0,0,10,0" MinWidth="96"
+                   Visibility="{Binding ShowCancel, Converter={StaticResource BoolVisible}}" />
+        <ui:Button x:Name="ConfirmButton" Content="{Binding ConfirmText}" Appearance="Primary" IsDefault="True" MinWidth="120" Click="OnConfirm" />
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</ui:FluentWindow>
