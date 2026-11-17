@@ -1,0 +1,1522 @@
+{
+  "Common_Add": [
+    "Add",
+    "Agregar"
+  ],
+  "Common_Back": [
+    "Back",
+    "Atrás"
+  ],
+  "Common_Cancel": [
+    "Cancel",
+    "Cancelar"
+  ],
+  "Common_Close": [
+    "Close",
+    "Cerrar"
+  ],
+  "Common_Delete": [
+    "Delete",
+    "Eliminar"
+  ],
+  "Common_Edit": [
+    "Edit",
+    "Editar"
+  ],
+  "Common_ExportCsv": [
+    "Export CSV",
+    "Exportar CSV"
+  ],
+  "Common_ExportPdf": [
+    "Export PDF",
+    "Exportar PDF"
+  ],
+  "Common_FileTooLarge": [
+    "The file is too large.",
+    "El archivo es demasiado grande."
+  ],
+  "Common_InvalidAmount": [
+    "Enter a valid amount.",
+    "Escribe un valor válido."
+  ],
+  "Common_Next": [
+    "Next",
+    "Siguiente"
+  ],
+  "Common_Ok": [
+    "OK",
+    "Aceptar"
+  ],
+  "Common_Reason": [
+    "Reason",
+    "Motivo"
+  ],
+  "Common_ReasonHint": [
+    "Why is this needed? It is saved in the audit log.",
+    "¿Por qué es necesario? Queda guardado en el registro de auditoría."
+  ],
+  "Common_ReasonOptional": [
+    "Reason (optional)",
+    "Motivo (opcional)"
+  ],
+  "Common_Refresh": [
+    "Refresh",
+    "Actualizar"
+  ],
+  "Common_Required": [
+    "Fill in the required fields.",
+    "Completa los campos obligatorios."
+  ],
+  "Common_Save": [
+    "Save",
+    "Guardar"
+  ],
+  "Common_SaveAs": [
+    "Save as…",
+    "Guardar como…"
+  ],
+  "Conn_Connected": [
+    "Connected",
+    "Conectado"
+  ],
+  "Conn_Connecting": [
+    "Connecting…",
+    "Conectando…"
+  ],
+  "Conn_Reconnecting": [
+    "Reconnecting…",
+    "Reconectando…"
+  ],
+  "Conn_LostTitle": [
+    "Connection lost",
+    "Se perdió la conexión"
+  ],
+  "Conn_LostMessage": [
+    "Trying to reconnect. Timers keep running on the server and on the PCs; what you see here may be out of date.",
+    "Intentando reconectar. Los tiempos siguen corriendo en el servidor y en los equipos; lo que ves aquí puede estar desactualizado."
+  ],
+  "Connect_Title": [
+    "Connect to your server",
+    "Conéctate a tu servidor"
+  ],
+  "Connect_Subtitle": [
+    "Enter the address of your TelloGameRoom server.",
+    "Escribe la dirección de tu servidor TelloGameRoom."
+  ],
+  "Connect_Server": [
+    "Server address",
+    "Dirección del servidor"
+  ],
+  "Connect_Fingerprint": [
+    "Certificate fingerprint (optional)",
+    "Huella del certificado (opcional)"
+  ],
+  "Connect_FingerprintHint": [
+    "Only for servers without a domain name",
+    "Solo para servidores sin nombre de dominio"
+  ],
+  "Connect_Button": [
+    "Connect",
+    "Conectar"
+  ],
+  "Connect_InvalidAddress": [
+    "The server address is not valid.",
+    "La dirección del servidor no es válida."
+  ],
+  "Connect_Certificate": [
+    "The server's certificate is not trusted. Enter its SHA-256 fingerprint (see the deployment guide).",
+    "El certificado del servidor no es de confianza. Escribe su huella SHA-256 (consulta la guía de despliegue)."
+  ],
+  "Login_Title": [
+    "Sign in",
+    "Iniciar sesión"
+  ],
+  "Login_Subtitle": [
+    "Use your own username and password.",
+    "Usa tu propio usuario y contraseña."
+  ],
+  "Login_Username": [
+    "Username",
+    "Usuario"
+  ],
+  "Login_Password": [
+    "Password",
+    "Contraseña"
+  ],
+  "Login_Button": [
+    "Sign in",
+    "Entrar"
+  ],
+  "Login_ChangeServer": [
+    "Change server",
+    "Cambiar servidor"
+  ],
+  "Login_Expired": [
+    "Your session has ended. Sign in again.",
+    "Tu sesión terminó. Inicia sesión de nuevo."
+  ],
+  "Login_Fill": [
+    "Enter your username and password.",
+    "Escribe tu usuario y contraseña."
+  ],
+  "Setup_Title": [
+    "Welcome to TelloGameRoom",
+    "Bienvenido a TelloGameRoom"
+  ],
+  "Setup_Subtitle": [
+    "Two quick steps and your shop is ready.",
+    "Dos pasos rápidos y tu negocio queda listo."
+  ],
+  "Setup_Step1": [
+    "Your shop",
+    "Tu negocio"
+  ],
+  "Setup_Step2": [
+    "Owner account",
+    "Cuenta del dueño"
+  ],
+  "Setup_ShopName": [
+    "Shop name",
+    "Nombre del negocio"
+  ],
+  "Setup_BranchName": [
+    "First branch",
+    "Primera sede"
+  ],
+  "Setup_BranchHint": [
+    "e.g. Downtown",
+    "p. ej. Centro"
+  ],
+  "Setup_HourlyRate": [
+    "Price per hour",
+    "Precio por hora"
+  ],
+  "Setup_RateHint": [
+    "You can change it later in Settings.",
+    "Puedes cambiarlo después en Ajustes."
+  ],
+  "Setup_OwnerName": [
+    "Your name",
+    "Tu nombre"
+  ],
+  "Setup_PasswordAgain": [
+    "Repeat the password",
+    "Repite la contraseña"
+  ],
+  "Setup_PasswordRule": [
+    "Use at least 8 characters.",
+    "Usa al menos 8 caracteres."
+  ],
+  "Setup_PasswordMismatch": [
+    "The passwords do not match.",
+    "Las contraseñas no coinciden."
+  ],
+  "Setup_FillShop": [
+    "Enter the shop name and the branch name.",
+    "Escribe el nombre del negocio y de la sede."
+  ],
+  "Setup_FillOwner": [
+    "Enter your name and a username.",
+    "Escribe tu nombre y un usuario."
+  ],
+  "Setup_Finish": [
+    "Create and sign in",
+    "Crear y entrar"
+  ],
+  "Nav_Overview": [
+    "Overview",
+    "Resumen"
+  ],
+  "Nav_Machines": [
+    "Machines",
+    "Equipos"
+  ],
+  "Nav_Shifts": [
+    "Shifts",
+    "Turnos"
+  ],
+  "Nav_Reports": [
+    "Reports",
+    "Informes"
+  ],
+  "Nav_Employees": [
+    "Employees",
+    "Empleados"
+  ],
+  "Nav_Audit": [
+    "Audit log",
+    "Auditoría"
+  ],
+  "Nav_Settings": [
+    "Settings",
+    "Ajustes"
+  ],
+  "Shell_SignOut": [
+    "Sign out",
+    "Salir"
+  ],
+  "Shell_OnDuty": [
+    "On duty: {0}",
+    "En turno: {0}"
+  ],
+  "Shell_NobodyOnDuty": [
+    "Nobody is clocked in",
+    "Nadie ha iniciado turno"
+  ],
+  "Role_Owner": [
+    "Owner",
+    "Dueño"
+  ],
+  "Role_Employee": [
+    "Employee",
+    "Empleado"
+  ],
+  "Status_Free": [
+    "Free",
+    "Libre"
+  ],
+  "Status_InUse": [
+    "In use",
+    "En uso"
+  ],
+  "Status_InUseOffline": [
+    "In use · offline",
+    "En uso · sin conexión"
+  ],
+  "Status_Offline": [
+    "Offline",
+    "Sin conexión"
+  ],
+  "Status_Paused": [
+    "Paused",
+    "En pausa"
+  ],
+  "Time_StartTitle": [
+    "Start session on {0}",
+    "Iniciar sesión en {0}"
+  ],
+  "Time_AddTitle": [
+    "Add time to {0}",
+    "Agregar tiempo a {0}"
+  ],
+  "Time_RemoveTitle": [
+    "Remove time from {0}",
+    "Quitar tiempo a {0}"
+  ],
+  "Time_StartConfirm": [
+    "Start session",
+    "Iniciar sesión"
+  ],
+  "Time_AddConfirm": [
+    "Add time",
+    "Agregar tiempo"
+  ],
+  "Time_RemoveConfirm": [
+    "Remove time",
+    "Quitar tiempo"
+  ],
+  "Time_Collect": [
+    "Amount to collect",
+    "Valor a cobrar"
+  ],
+  "Time_Refund": [
+    "Amount to refund",
+    "Valor a devolver"
+  ],
+  "Time_Rate": [
+    "{0} per hour",
+    "{0} por hora"
+  ],
+  "Time_Custom": [
+    "Other amount (minutes)",
+    "Otro tiempo (minutos)"
+  ],
+  "Time_CustomHint": [
+    "e.g. 45",
+    "p. ej. 45"
+  ],
+  "Time_Free": [
+    "Free",
+    "Gratis"
+  ],
+  "Time_FreeToggle": [
+    "Free session (requires a reason)",
+    "Sesión gratis (requiere motivo)"
+  ],
+  "Machines_Summary": [
+    "{0} in use · {1} free · {2} offline",
+    "{0} en uso · {1} libres · {2} sin conexión"
+  ],
+  "Machines_AddMachine": [
+    "Add PC",
+    "Agregar equipo"
+  ],
+  "Machines_AllMachines": [
+    "All PCs",
+    "Todos los equipos"
+  ],
+  "Machines_MessageAll": [
+    "Message all",
+    "Mensaje a todos"
+  ],
+  "Machines_LockAll": [
+    "Lock all",
+    "Bloquear todos"
+  ],
+  "Machines_RestartAll": [
+    "Restart all",
+    "Reiniciar todos"
+  ],
+  "Machines_ShutdownAll": [
+    "Shut down all",
+    "Apagar todos"
+  ],
+  "Machines_Start": [
+    "Start session",
+    "Iniciar sesión"
+  ],
+  "Machines_AddTime": [
+    "Add time",
+    "Agregar tiempo"
+  ],
+  "Machines_RemoveTime": [
+    "Remove time",
+    "Quitar tiempo"
+  ],
+  "Machines_Pause": [
+    "Pause",
+    "Pausar"
+  ],
+  "Machines_Resume": [
+    "Resume",
+    "Reanudar"
+  ],
+  "Machines_PauseResume": [
+    "Pause or resume",
+    "Pausar o reanudar"
+  ],
+  "Machines_Stop": [
+    "Stop session",
+    "Terminar sesión"
+  ],
+  "Machines_StopTitle": [
+    "Stop the session on {0}?",
+    "¿Terminar la sesión en {0}?"
+  ],
+  "Machines_StopMessage": [
+    "{0} is left and will be lost. No money is refunded. To give money back, use \"Cancel and refund\" instead.",
+    "Quedan {0} y se perderán. No se devuelve dinero. Para devolver dinero usa «Cancelar y devolver»."
+  ],
+  "Machines_CancelRefund": [
+    "Cancel and refund",
+    "Cancelar y devolver"
+  ],
+  "Machines_CancelTitle": [
+    "Cancel the session on {0}?",
+    "¿Cancelar la sesión en {0}?"
+  ],
+  "Machines_CancelMessage": [
+    "The customer paid {0}. Leave the refund empty to give back the unused time.",
+    "El cliente pagó {0}. Deja la devolución vacía para devolver el tiempo no usado."
+  ],
+  "Machines_CancelConfirm": [
+    "Cancel session",
+    "Cancelar sesión"
+  ],
+  "Machines_RefundAmount": [
+    "Refund amount (optional)",
+    "Valor a devolver (opcional)"
+  ],
+  "Machines_Transfer": [
+    "Move to another PC",
+    "Pasar a otro equipo"
+  ],
+  "Machines_TransferTitle": [
+    "Move the session from {0}",
+    "Pasar la sesión de {0}"
+  ],
+  "Machines_TransferMessage": [
+    "The remaining time moves to the PC you choose.",
+    "El tiempo restante pasa al equipo que elijas."
+  ],
+  "Machines_TransferTarget": [
+    "Move to",
+    "Pasar a"
+  ],
+  "Machines_NoFreeTarget": [
+    "There is no free PC to move the session to.",
+    "No hay ningún equipo libre para pasar la sesión."
+  ],
+  "Machines_SendMessage": [
+    "Send message",
+    "Enviar mensaje"
+  ],
+  "Machines_MessageTitle": [
+    "Message to {0}",
+    "Mensaje para {0}"
+  ],
+  "Machines_MessageAllTitle": [
+    "Message to all PCs",
+    "Mensaje para todos los equipos"
+  ],
+  "Machines_MessageText": [
+    "Message",
+    "Mensaje"
+  ],
+  "Machines_Send": [
+    "Send",
+    "Enviar"
+  ],
+  "Machines_MessageSent": [
+    "Message sent to {0}.",
+    "Mensaje enviado a {0}."
+  ],
+  "Machines_SentTo": [
+    "Sent to {0} PCs. {1} offline.",
+    "Enviado a {0} equipos. {1} sin conexión."
+  ],
+  "Machines_ConfirmOne": [
+    "{0}: {1}?",
+    "{0}: ¿{1}?"
+  ],
+  "Machines_ConfirmAll": [
+    "{0}: every PC in this branch?",
+    "{0}: ¿todos los equipos de esta sede?"
+  ],
+  "Machines_Screenshot": [
+    "Take screenshot",
+    "Capturar pantalla"
+  ],
+  "Machines_ScreenshotTitle": [
+    "{0} · {1}",
+    "{0} · {1}"
+  ],
+  "Machines_More": [
+    "More actions",
+    "Más acciones"
+  ],
+  "Machines_OfflineTitle": [
+    "This PC is offline",
+    "Este equipo está sin conexión"
+  ],
+  "Machines_OfflineStart": [
+    "{0} is not connected. If you start a session now, the time will run even though the PC may still be locked.",
+    "{0} no está conectado. Si inicias una sesión ahora, el tiempo correrá aunque el equipo siga bloqueado."
+  ],
+  "Machines_StartAnyway": [
+    "Start anyway",
+    "Iniciar de todos modos"
+  ],
+  "Machines_PairTitle": [
+    "Add a PC",
+    "Agregar un equipo"
+  ],
+  "Machines_PairMessage": [
+    "Choose a name. You will get a code to type into the Machine app on that PC.",
+    "Elige un nombre. Recibirás un código para escribir en la app del equipo."
+  ],
+  "Machines_PairCreate": [
+    "Create code",
+    "Crear código"
+  ],
+  "Machines_Name": [
+    "PC name",
+    "Nombre del equipo"
+  ],
+  "Machines_PairCodeTitle": [
+    "Pairing code for {0}",
+    "Código para {0}"
+  ],
+  "Machines_PairCodeMessage": [
+    "Type this code into the Machine app on that PC. It works once and expires at {0}.",
+    "Escribe este código en la app del equipo. Sirve una sola vez y vence a las {0}."
+  ],
+  "Machines_RepairCode": [
+    "New pairing code",
+    "Nuevo código de vinculación"
+  ],
+  "Machines_RepairTitle": [
+    "Re-pair {0}?",
+    "¿Volver a vincular {0}?"
+  ],
+  "Machines_RepairMessage": [
+    "Use this after reinstalling Windows. The PC keeps its name and history; its old connection stops working once the new code is used.",
+    "Úsalo después de reinstalar Windows. El equipo conserva su nombre e historial; la conexión anterior deja de funcionar cuando se use el código nuevo."
+  ],
+  "Machines_Rename": [
+    "Rename",
+    "Cambiar nombre"
+  ],
+  "Machines_RenameTitle": [
+    "Rename {0}",
+    "Cambiar nombre de {0}"
+  ],
+  "Machines_SetGroup": [
+    "Set group",
+    "Asignar grupo"
+  ],
+  "Machines_GroupTitle": [
+    "Group of {0}",
+    "Grupo de {0}"
+  ],
+  "Machines_Group": [
+    "Group",
+    "Grupo"
+  ],
+  "Machines_NoGroup": [
+    "No group (branch price)",
+    "Sin grupo (precio de la sede)"
+  ],
+  "Machines_GroupNone": [
+    "No groups yet. Create them in Settings if you want a different price for some PCs.",
+    "Aún no hay grupos. Créalos en Ajustes si quieres otro precio para algunos equipos."
+  ],
+  "Machines_ToggleEnabled": [
+    "Enable or disable",
+    "Habilitar o deshabilitar"
+  ],
+  "Machines_DeleteTitle": [
+    "Delete {0}?",
+    "¿Eliminar {0}?"
+  ],
+  "Machines_DeleteMessage": [
+    "Only a PC that never had a session can be deleted. Otherwise disable it.",
+    "Solo se puede eliminar un equipo que nunca tuvo sesiones. Si no, deshabilítalo."
+  ],
+  "Machines_Empty": [
+    "No PCs yet",
+    "Aún no hay equipos"
+  ],
+  "Machines_EmptyHint": [
+    "Add a PC to get its pairing code.",
+    "Agrega un equipo para obtener su código de vinculación."
+  ],
+  "Quick_5Min": [
+    "5 minutes left",
+    "Quedan 5 minutos"
+  ],
+  "Quick_Closing": [
+    "We close in 10 minutes",
+    "Cerramos en 10 minutos"
+  ],
+  "Quick_Volume": [
+    "Please lower the volume",
+    "Por favor baja el volumen"
+  ],
+  "Quick_Counter": [
+    "Please come to the counter",
+    "Por favor acércate a la caja"
+  ],
+  "Cmd_Lock": [
+    "Lock",
+    "Bloquear"
+  ],
+  "Cmd_Restart": [
+    "Restart",
+    "Reiniciar"
+  ],
+  "Cmd_Shutdown": [
+    "Shut down",
+    "Apagar"
+  ],
+  "Shifts_NotClockedIn": [
+    "You are not clocked in",
+    "No has iniciado turno"
+  ],
+  "Shifts_NotClockedInHint": [
+    "Start your shift to sell sessions. Count the cash in the drawer first.",
+    "Inicia tu turno para vender sesiones. Primero cuenta el efectivo de la caja."
+  ],
+  "Shifts_Open": [
+    "Start shift",
+    "Iniciar turno"
+  ],
+  "Shifts_OpenTitle": [
+    "Start your shift",
+    "Iniciar tu turno"
+  ],
+  "Shifts_OpenMessage": [
+    "Count the cash that is in the drawer right now.",
+    "Cuenta el efectivo que hay en la caja en este momento."
+  ],
+  "Shifts_OpeningCash": [
+    "Opening cash",
+    "Efectivo inicial"
+  ],
+  "Shifts_OnDuty": [
+    "Your shift is open",
+    "Tu turno está abierto"
+  ],
+  "Shifts_Sales": [
+    "Sales",
+    "Ventas"
+  ],
+  "Shifts_Refunds": [
+    "Refunds",
+    "Devoluciones"
+  ],
+  "Shifts_ExpectedCash": [
+    "Expected cash",
+    "Efectivo esperado"
+  ],
+  "Shifts_CountedCash": [
+    "Counted cash",
+    "Efectivo contado"
+  ],
+  "Shifts_Difference": [
+    "Difference",
+    "Diferencia"
+  ],
+  "Shifts_Close": [
+    "End shift",
+    "Cerrar turno"
+  ],
+  "Shifts_CloseTitle": [
+    "End the shift of {0}",
+    "Cerrar el turno de {0}"
+  ],
+  "Shifts_CloseMessage": [
+    "Count all the cash in the drawer and enter the total.",
+    "Cuenta todo el efectivo de la caja y escribe el total."
+  ],
+  "Shifts_Notes": [
+    "Notes (optional)",
+    "Notas (opcional)"
+  ],
+  "Shifts_ClosedTitle": [
+    "Shift closed",
+    "Turno cerrado"
+  ],
+  "Shifts_ClosedSummary": [
+    "Expected: {0}\nCounted: {1}\n\n{2}",
+    "Esperado: {0}\nContado: {1}\n\n{2}"
+  ],
+  "Shifts_Balanced": [
+    "The cash is balanced.",
+    "El efectivo cuadra."
+  ],
+  "Shifts_Short": [
+    "{0} is missing.",
+    "Faltan {0}."
+  ],
+  "Shifts_Over": [
+    "There is {0} too much.",
+    "Sobran {0}."
+  ],
+  "Shifts_History": [
+    "Shifts of the last 30 days",
+    "Turnos de los últimos 30 días"
+  ],
+  "Shifts_Print": [
+    "Shift report (PDF)",
+    "Informe del turno (PDF)"
+  ],
+  "Shifts_CloseSelected": [
+    "Close selected shift",
+    "Cerrar turno seleccionado"
+  ],
+  "Shifts_StillOpen": [
+    "Open",
+    "Abierto"
+  ],
+  "Col_Employee": [
+    "Employee",
+    "Empleado"
+  ],
+  "Col_Opened": [
+    "Opened",
+    "Apertura"
+  ],
+  "Col_Closed": [
+    "Closed",
+    "Cierre"
+  ],
+  "Col_Role": [
+    "Role",
+    "Rol"
+  ],
+  "Col_Status": [
+    "Status",
+    "Estado"
+  ],
+  "Col_LastLogin": [
+    "Last sign-in",
+    "Último ingreso"
+  ],
+  "Col_Time": [
+    "Time",
+    "Hora"
+  ],
+  "Col_Action": [
+    "Action",
+    "Acción"
+  ],
+  "Col_User": [
+    "User",
+    "Usuario"
+  ],
+  "Col_Machine": [
+    "PC",
+    "Equipo"
+  ],
+  "Col_Details": [
+    "Details",
+    "Detalles"
+  ],
+  "Reports_Today": [
+    "Today",
+    "Hoy"
+  ],
+  "Reports_Last7": [
+    "Last 7 days",
+    "Últimos 7 días"
+  ],
+  "Reports_ThisMonth": [
+    "This month",
+    "Este mes"
+  ],
+  "Reports_LastMonth": [
+    "Last month",
+    "Mes pasado"
+  ],
+  "Reports_Show": [
+    "Show",
+    "Ver"
+  ],
+  "Reports_Income": [
+    "Income",
+    "Ingresos"
+  ],
+  "Reports_Sessions": [
+    "Sessions",
+    "Sesiones"
+  ],
+  "Reports_HoursSold": [
+    "Hours sold",
+    "Horas vendidas"
+  ],
+  "Reports_Refunds": [
+    "Refunds",
+    "Devoluciones"
+  ],
+  "Reports_TodayIncome": [
+    "Income today",
+    "Ingresos de hoy"
+  ],
+  "Reports_IncomeByDay": [
+    "Income per day",
+    "Ingresos por día"
+  ],
+  "Reports_BusiestHours": [
+    "Busiest hours (sessions started)",
+    "Horas más ocupadas (sesiones iniciadas)"
+  ],
+  "Reports_ByEmployee": [
+    "Per employee",
+    "Por empleado"
+  ],
+  "Reports_ByMachine": [
+    "Per PC",
+    "Por equipo"
+  ],
+  "Reports_SessionsCount": [
+    "{0} sessions",
+    "{0} sesiones"
+  ],
+  "Reports_SessionsWithFree": [
+    "{0} ({1} free)",
+    "{0} ({1} gratis)"
+  ],
+  "Employees_Add": [
+    "Add employee",
+    "Agregar empleado"
+  ],
+  "Employees_AddTitle": [
+    "New employee",
+    "Nuevo empleado"
+  ],
+  "Employees_EditTitle": [
+    "Edit {0}",
+    "Editar a {0}"
+  ],
+  "Employees_DisplayName": [
+    "Name",
+    "Nombre"
+  ],
+  "Employees_Branches": [
+    "Branches",
+    "Sedes"
+  ],
+  "Employees_AllBranches": [
+    "All branches",
+    "Todas las sedes"
+  ],
+  "Employees_IsOwner": [
+    "Owner (full access)",
+    "Dueño (acceso total)"
+  ],
+  "Employees_IsOwnerHint": [
+    "Owners can change prices, settings and employees.",
+    "Los dueños pueden cambiar precios, ajustes y empleados."
+  ],
+  "Employees_ActiveToggle": [
+    "Account is active",
+    "La cuenta está activa"
+  ],
+  "Employees_Active": [
+    "Active",
+    "Activo"
+  ],
+  "Employees_Inactive": [
+    "Deactivated",
+    "Desactivado"
+  ],
+  "Employees_LockedOut": [
+    "Locked (too many attempts)",
+    "Bloqueado (demasiados intentos)"
+  ],
+  "Employees_ResetPassword": [
+    "Reset password",
+    "Restablecer contraseña"
+  ],
+  "Employees_ResetTitle": [
+    "New password for {0}",
+    "Nueva contraseña para {0}"
+  ],
+  "Employees_ResetMessage": [
+    "The employee is signed out everywhere and any lockout is cleared.",
+    "El empleado sale de todas partes y se quita cualquier bloqueo."
+  ],
+  "Employees_ResetDone": [
+    "The password of {0} was changed.",
+    "Se cambió la contraseña de {0}."
+  ],
+  "Employees_ToggleActive": [
+    "Activate or deactivate",
+    "Activar o desactivar"
+  ],
+  "Employees_Deactivate": [
+    "Deactivate",
+    "Desactivar"
+  ],
+  "Employees_DeactivateTitle": [
+    "Deactivate {0}?",
+    "¿Desactivar a {0}?"
+  ],
+  "Employees_DeactivateMessage": [
+    "They are signed out immediately and cannot sign in until you activate the account again. Their history is kept.",
+    "Sale de inmediato y no podrá entrar hasta que actives la cuenta de nuevo. Su historial se conserva."
+  ],
+  "Employees_Permissions": [
+    "What employees may do",
+    "Qué pueden hacer los empleados"
+  ],
+  "Employees_PermissionsHint": [
+    "Applies to every employee at once. Prices, settings, reports and free time are always owner-only.",
+    "Se aplica a todos los empleados al instante. Precios, ajustes, informes y tiempo gratis siempre son solo del dueño."
+  ],
+  "Perm_SessionsAddTime": [
+    "Add time",
+    "Agregar tiempo"
+  ],
+  "Perm_SessionsRemoveTime": [
+    "Remove time (refund)",
+    "Quitar tiempo (devolución)"
+  ],
+  "Perm_SessionsPauseResume": [
+    "Pause and resume",
+    "Pausar y reanudar"
+  ],
+  "Perm_SessionsStop": [
+    "Stop a session",
+    "Terminar una sesión"
+  ],
+  "Perm_SessionsCancelPaid": [
+    "Cancel a paid session (refund)",
+    "Cancelar una sesión pagada (devolución)"
+  ],
+  "Perm_SessionsTransfer": [
+    "Move a session to another PC",
+    "Pasar una sesión a otro equipo"
+  ],
+  "Perm_RemoteMessage": [
+    "Send messages",
+    "Enviar mensajes"
+  ],
+  "Perm_RemoteLock": [
+    "Lock PCs",
+    "Bloquear equipos"
+  ],
+  "Perm_RemotePower": [
+    "Restart and shut down PCs",
+    "Reiniciar y apagar equipos"
+  ],
+  "Audit_Hint": [
+    "Every sensitive action, who did it and when. Entries cannot be changed or deleted.",
+    "Cada acción sensible, quién la hizo y cuándo. Los registros no se pueden cambiar ni borrar."
+  ],
+  "Audit_Search": [
+    "Search user, PC, reason…",
+    "Buscar usuario, equipo, motivo…"
+  ],
+  "Audit_All": [
+    "All actions",
+    "Todas las acciones"
+  ],
+  "Audit_Sessions": [
+    "Sessions",
+    "Sesiones"
+  ],
+  "Audit_Logins": [
+    "Sign-ins",
+    "Ingresos"
+  ],
+  "Audit_Remote": [
+    "Remote control",
+    "Control remoto"
+  ],
+  "Audit_Shifts": [
+    "Shifts",
+    "Turnos"
+  ],
+  "Audit_Employees": [
+    "Employees",
+    "Empleados"
+  ],
+  "Audit_Settings": [
+    "Settings and prices",
+    "Ajustes y precios"
+  ],
+  "Audit_Machines": [
+    "PCs",
+    "Equipos"
+  ],
+  "Audit_Backups": [
+    "Backups",
+    "Copias de seguridad"
+  ],
+  "Audit_ThisBranch": [
+    "This branch only",
+    "Solo esta sede"
+  ],
+  "Audit_Apply": [
+    "Search",
+    "Buscar"
+  ],
+  "Audit_Page": [
+    "Page {0} of {1} · {2} entries",
+    "Página {0} de {1} · {2} registros"
+  ],
+  "Audit_Previous": [
+    "Previous",
+    "Anterior"
+  ],
+  "Audit_Next": [
+    "Next",
+    "Siguiente"
+  ],
+  "Audit_System": [
+    "System",
+    "Sistema"
+  ],
+  "Action_setup_completed": [
+    "Shop set up",
+    "Negocio configurado"
+  ],
+  "Action_auth_login": [
+    "Signed in",
+    "Ingresó"
+  ],
+  "Action_auth_login_failed": [
+    "Failed sign-in",
+    "Ingreso fallido"
+  ],
+  "Action_auth_lockout": [
+    "Account locked",
+    "Cuenta bloqueada"
+  ],
+  "Action_auth_logout": [
+    "Signed out",
+    "Salió"
+  ],
+  "Action_auth_refresh_reuse": [
+    "Suspicious session reuse",
+    "Reutilización sospechosa de sesión"
+  ],
+  "Action_auth_password_changed": [
+    "Password changed",
+    "Contraseña cambiada"
+  ],
+  "Action_machine_pairing_code_created": [
+    "Pairing code created",
+    "Código de vinculación creado"
+  ],
+  "Action_machine_paired": [
+    "PC paired",
+    "Equipo vinculado"
+  ],
+  "Action_machine_updated": [
+    "PC changed",
+    "Equipo modificado"
+  ],
+  "Action_machine_deleted": [
+    "PC deleted",
+    "Equipo eliminado"
+  ],
+  "Action_machine_token_reset": [
+    "PC re-paired",
+    "Equipo vinculado de nuevo"
+  ],
+  "Action_session_started": [
+    "Session started",
+    "Sesión iniciada"
+  ],
+  "Action_session_free_started": [
+    "Free session started",
+    "Sesión gratis iniciada"
+  ],
+  "Action_session_time_added": [
+    "Time added",
+    "Tiempo agregado"
+  ],
+  "Action_session_time_removed": [
+    "Time removed",
+    "Tiempo quitado"
+  ],
+  "Action_session_paused": [
+    "Session paused",
+    "Sesión pausada"
+  ],
+  "Action_session_resumed": [
+    "Session resumed",
+    "Sesión reanudada"
+  ],
+  "Action_session_stopped": [
+    "Session stopped",
+    "Sesión terminada"
+  ],
+  "Action_session_cancelled": [
+    "Session cancelled",
+    "Sesión cancelada"
+  ],
+  "Action_session_transferred": [
+    "Session moved",
+    "Sesión trasladada"
+  ],
+  "Action_session_expired": [
+    "Time ran out",
+    "Se acabó el tiempo"
+  ],
+  "Action_remote_command": [
+    "Remote command",
+    "Comando remoto"
+  ],
+  "Action_remote_command_all": [
+    "Remote command to all",
+    "Comando remoto a todos"
+  ],
+  "Action_remote_message": [
+    "Message sent",
+    "Mensaje enviado"
+  ],
+  "Action_remote_message_all": [
+    "Message to all",
+    "Mensaje a todos"
+  ],
+  "Action_remote_screenshot": [
+    "Screenshot taken",
+    "Captura de pantalla"
+  ],
+  "Action_employee_created": [
+    "Employee added",
+    "Empleado agregado"
+  ],
+  "Action_employee_updated": [
+    "Employee changed",
+    "Empleado modificado"
+  ],
+  "Action_employee_deactivated": [
+    "Employee deactivated",
+    "Empleado desactivado"
+  ],
+  "Action_employee_activated": [
+    "Employee activated",
+    "Empleado activado"
+  ],
+  "Action_employee_password_reset": [
+    "Password reset",
+    "Contraseña restablecida"
+  ],
+  "Action_settings_permissions_changed": [
+    "Permissions changed",
+    "Permisos cambiados"
+  ],
+  "Action_shift_opened": [
+    "Shift started",
+    "Turno iniciado"
+  ],
+  "Action_shift_closed": [
+    "Shift closed",
+    "Turno cerrado"
+  ],
+  "Action_settings_price_changed": [
+    "Price changed",
+    "Precio cambiado"
+  ],
+  "Action_settings_changed": [
+    "Settings changed",
+    "Ajustes cambiados"
+  ],
+  "Action_settings_admin_pin_changed": [
+    "Admin PIN changed",
+    "PIN de administrador cambiado"
+  ],
+  "Action_branch_created": [
+    "Branch added",
+    "Sede agregada"
+  ],
+  "Action_branch_updated": [
+    "Branch changed",
+    "Sede modificada"
+  ],
+  "Action_machine_group_changed": [
+    "Group changed",
+    "Grupo modificado"
+  ],
+  "Action_backup_created": [
+    "Backup downloaded",
+    "Copia descargada"
+  ],
+  "Action_backup_restored": [
+    "Backup restored",
+    "Copia restaurada"
+  ],
+  "Action_report_exported": [
+    "Report exported",
+    "Informe exportado"
+  ],
+  "Action_audit_exported": [
+    "Audit log exported",
+    "Auditoría exportada"
+  ],
+  "Settings_ThisComputer": [
+    "This computer",
+    "Este computador"
+  ],
+  "Settings_Language": [
+    "Language",
+    "Idioma"
+  ],
+  "Settings_Theme": [
+    "Theme",
+    "Tema"
+  ],
+  "Settings_Dark": [
+    "Dark",
+    "Oscuro"
+  ],
+  "Settings_Light": [
+    "Light",
+    "Claro"
+  ],
+  "Settings_Server": [
+    "Server",
+    "Servidor"
+  ],
+  "Settings_Version": [
+    "Dashboard version {0}",
+    "Versión del panel {0}"
+  ],
+  "Settings_Shop": [
+    "Shop",
+    "Negocio"
+  ],
+  "Settings_ShopLanguage": [
+    "Language on the PCs and in exports",
+    "Idioma en los equipos y en las exportaciones"
+  ],
+  "Settings_Logo": [
+    "Logo",
+    "Logo"
+  ],
+  "Settings_UploadLogo": [
+    "Upload logo",
+    "Subir logo"
+  ],
+  "Settings_RemoveLogo": [
+    "Remove",
+    "Quitar"
+  ],
+  "Settings_LogoHint": [
+    "PNG or JPEG, up to 1 MB. Shown on every lock screen.",
+    "PNG o JPEG, hasta 1 MB. Se muestra en todas las pantallas de bloqueo."
+  ],
+  "Settings_Saved": [
+    "Saved.",
+    "Guardado."
+  ],
+  "Settings_Branch": [
+    "This branch",
+    "Esta sede"
+  ],
+  "Settings_BranchName": [
+    "Branch name",
+    "Nombre de la sede"
+  ],
+  "Settings_AddBranch": [
+    "Add branch",
+    "Agregar sede"
+  ],
+  "Settings_AddBranchMessage": [
+    "The new branch starts with the same price and currency as your first one.",
+    "La nueva sede empieza con el mismo precio y moneda que la primera."
+  ],
+  "Settings_BranchAdded": [
+    "Branch added. Pick it at the top of the window.",
+    "Sede agregada. Elígela en la parte superior de la ventana."
+  ],
+  "Settings_HourlyRate": [
+    "Price per hour",
+    "Precio por hora"
+  ],
+  "Settings_WarningMinutes": [
+    "Warn the customer (minutes before the end)",
+    "Avisar al cliente (minutos antes del final)"
+  ],
+  "Settings_CurrencyCode": [
+    "Currency code",
+    "Código de moneda"
+  ],
+  "Settings_CurrencySymbol": [
+    "Currency symbol",
+    "Símbolo de moneda"
+  ],
+  "Settings_Decimals": [
+    "Decimals",
+    "Decimales"
+  ],
+  "Settings_Rounding": [
+    "Rounding",
+    "Redondeo"
+  ],
+  "Settings_RoundingStep": [
+    "Round to",
+    "Redondear a"
+  ],
+  "Settings_TimeZone": [
+    "Time zone (for daily reports)",
+    "Zona horaria (para informes diarios)"
+  ],
+  "Settings_PriceHint": [
+    "A new price only applies to sessions started after you save. Running sessions keep their price.",
+    "Un precio nuevo solo aplica a las sesiones que se inicien después de guardar. Las sesiones en curso conservan su precio."
+  ],
+  "Settings_InvalidNumbers": [
+    "Check the price and the warning minutes.",
+    "Revisa el precio y los minutos de aviso."
+  ],
+  "Rounding_None": [
+    "No rounding",
+    "Sin redondeo"
+  ],
+  "Rounding_Nearest": [
+    "Nearest",
+    "Al más cercano"
+  ],
+  "Rounding_Up": [
+    "Always up",
+    "Siempre hacia arriba"
+  ],
+  "Rounding_Down": [
+    "Always down",
+    "Siempre hacia abajo"
+  ],
+  "Settings_ChangePin": [
+    "Change admin PIN",
+    "Cambiar PIN de administrador"
+  ],
+  "Settings_PinTitle": [
+    "Admin PIN for the PCs",
+    "PIN de administrador de los equipos"
+  ],
+  "Settings_PinMessage": [
+    "This PIN closes the lock screen on a gaming PC (Ctrl+Shift+F12). Leave it empty to remove the PIN; then the lock screen cannot be closed at all.",
+    "Este PIN cierra la pantalla de bloqueo en un equipo (Ctrl+Shift+F12). Déjalo vacío para quitarlo; así la pantalla de bloqueo no se podrá cerrar."
+  ],
+  "Settings_PinLabel": [
+    "New PIN (4 to 12 digits)",
+    "PIN nuevo (4 a 12 dígitos)"
+  ],
+  "Settings_PinRule": [
+    "Use 4 to 12 digits.",
+    "Usa de 4 a 12 dígitos."
+  ],
+  "Settings_PinSet": [
+    "A PIN is set",
+    "Hay un PIN configurado"
+  ],
+  "Settings_PinNotSet": [
+    "No PIN set",
+    "Sin PIN"
+  ],
+  "Settings_Groups": [
+    "PC groups (optional)",
+    "Grupos de equipos (opcional)"
+  ],
+  "Settings_GroupsHint": [
+    "Give some PCs a different price, for example a VIP area. Assign a PC to a group from its menu on the Machines page.",
+    "Da a algunos equipos otro precio, por ejemplo una zona VIP. Asigna un equipo a un grupo desde su menú en la página Equipos."
+  ],
+  "Settings_AddGroup": [
+    "New group",
+    "Nuevo grupo"
+  ],
+  "Settings_EditGroup": [
+    "Edit {0}",
+    "Editar {0}"
+  ],
+  "Settings_GroupName": [
+    "Group name",
+    "Nombre del grupo"
+  ],
+  "Settings_GroupRate": [
+    "Price per hour (empty = branch price)",
+    "Precio por hora (vacío = precio de la sede)"
+  ],
+  "Settings_GroupMessage": [
+    "PCs in this group are charged the group's price.",
+    "Los equipos de este grupo se cobran al precio del grupo."
+  ],
+  "Settings_GroupBranchRate": [
+    "Branch price",
+    "Precio de la sede"
+  ],
+  "Settings_DeleteGroupTitle": [
+    "Delete {0}?",
+    "¿Eliminar {0}?"
+  ],
+  "Settings_DeleteGroupMessage": [
+    "Its PCs go back to the branch price.",
+    "Sus equipos vuelven al precio de la sede."
+  ],
+  "Settings_Backup": [
+    "Backup",
+    "Copia de seguridad"
+  ],
+  "Settings_BackupHint": [
+    "The server also makes an automatic backup every day and keeps the last 14.",
+    "El servidor además hace una copia automática cada día y conserva las últimas 14."
+  ],
+  "Settings_BackupNow": [
+    "Download backup",
+    "Descargar copia"
+  ],
+  "Settings_BackupSaved": [
+    "Backup saved.",
+    "Copia guardada."
+  ],
+  "Settings_Restore": [
+    "Restore backup",
+    "Restaurar copia"
+  ],
+  "Settings_RestoreTitle": [
+    "Restore a backup",
+    "Restaurar una copia"
+  ],
+  "Settings_RestoreMessage": [
+    "Everything on the server is replaced by the backup: sessions, sales, employees and settings. The server restarts and everyone is signed out. The current data is kept on the server as a safety copy.",
+    "Todo lo que hay en el servidor se reemplaza por la copia: sesiones, ventas, empleados y ajustes. El servidor se reinicia y todos salen. Los datos actuales quedan en el servidor como copia de respaldo."
+  ],
+  "Settings_RestoreDone": [
+    "The backup was accepted. The server is restarting; sign in again in a moment.",
+    "La copia fue aceptada. El servidor se está reiniciando; inicia sesión de nuevo en un momento."
+  ],
+  "Err_network": [
+    "Could not reach the server. Check the connection.",
+    "No se pudo conectar con el servidor. Revisa la conexión."
+  ],
+  "Err_invalid_credentials": [
+    "Wrong username or password.",
+    "Usuario o contraseña incorrectos."
+  ],
+  "Err_account_locked": [
+    "Too many failed attempts. Wait a few minutes or ask the owner to reset your password.",
+    "Demasiados intentos fallidos. Espera unos minutos o pide al dueño que restablezca tu contraseña."
+  ],
+  "Err_account_disabled": [
+    "This account has been deactivated.",
+    "Esta cuenta fue desactivada."
+  ],
+  "Err_invalid_refresh_token": [
+    "Your session has ended. Sign in again.",
+    "Tu sesión terminó. Inicia sesión de nuevo."
+  ],
+  "Err_forbidden": [
+    "You do not have permission to do this.",
+    "No tienes permiso para hacer esto."
+  ],
+  "Err_not_found": [
+    "This no longer exists. Refresh and try again.",
+    "Esto ya no existe. Actualiza e inténtalo de nuevo."
+  ],
+  "Err_rate_limited": [
+    "Too many attempts. Wait a minute.",
+    "Demasiados intentos. Espera un minuto."
+  ],
+  "Err_machine_busy": [
+    "This PC already has a session.",
+    "Este equipo ya tiene una sesión."
+  ],
+  "Err_machine_offline": [
+    "This PC is offline.",
+    "Este equipo está sin conexión."
+  ],
+  "Err_machine_disabled": [
+    "This PC is disabled.",
+    "Este equipo está deshabilitado."
+  ],
+  "Err_no_open_session": [
+    "This PC has no session.",
+    "Este equipo no tiene sesión."
+  ],
+  "Err_invalid_session_state": [
+    "That is not possible in the session's current state.",
+    "Eso no es posible en el estado actual de la sesión."
+  ],
+  "Err_price_changed": [
+    "The price has changed. Check the amount and confirm again.",
+    "El precio cambió. Revisa el valor y confirma de nuevo."
+  ],
+  "Err_reason_required": [
+    "A reason is required.",
+    "Se requiere un motivo."
+  ],
+  "Err_shift_required": [
+    "Start your shift before selling.",
+    "Inicia tu turno antes de vender."
+  ],
+  "Err_shift_already_open": [
+    "You already have an open shift.",
+    "Ya tienes un turno abierto."
+  ],
+  "Err_no_open_shift": [
+    "There is no open shift.",
+    "No hay un turno abierto."
+  ],
+  "Err_timeout": [
+    "The PC did not answer in time.",
+    "El equipo no respondió a tiempo."
+  ],
+  "Err_last_owner": [
+    "The shop needs at least one active owner, and you cannot remove your own access.",
+    "El negocio necesita al menos un dueño activo, y no puedes quitarte tu propio acceso."
+  ],
+  "Err_protocol_mismatch": [
+    "This Dashboard and the server are different versions. Update both.",
+    "Este panel y el servidor son de versiones distintas. Actualiza ambos."
+  ],
+  "Err_setup_already_completed": [
+    "This server is already set up.",
+    "Este servidor ya está configurado."
+  ]
+}

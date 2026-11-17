@@ -1,0 +1,40 @@
+# systemd alternative to Docker.
+#
+#   dotnet publish src/TelloGameRoom.Server -c Release -o /opt/tellogameroom
+#   useradd --system --home /var/lib/tellogameroom --create-home tello
+#   cp deploy/systemd/tellogameroom.service /etc/systemd/system/
+#   systemctl daemon-reload && systemctl enable --now tellogameroom
+#
+# Put a reverse proxy with TLS in front of it (see deploy/caddy or deploy/nginx).
+
+[Unit]
+Description=TelloGameRoom server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tello
+Group=tello
+WorkingDirectory=/opt/tellogameroom
+ExecStart=/usr/bin/dotnet /opt/tellogameroom/TelloGameRoom.Server.dll
+# Restart=always is also what applies a database restore: the server stops itself and systemd starts it again.
+Restart=always
+RestartSec=3
+Environment=ASPNETCORE_URLS=http://127.0.0.1:8080
+Environment=Storage__DataDirectory=/var/lib/tellogameroom
+Environment=Security__TrustedProxies__0=127.0.0.1
+Environment=DOTNET_gcServer=0
+
+# Sandboxing: the service can only write to its own data directory.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/tellogameroom
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

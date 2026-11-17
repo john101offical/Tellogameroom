@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Action_audit_exported" xml:space="preserve"><value>Auditoría exportada</value></data>
+  <data name="Action_auth_lockout" xml:space="preserve"><value>Cuenta bloqueada</value></data>
+  <data name="Action_auth_login" xml:space="preserve"><value>Ingresó</value></data>
+  <data name="Action_auth_login_failed" xml:space="preserve"><value>Ingreso fallido</value></data>
+  <data name="Action_auth_logout" xml:space="preserve"><value>Salió</value></data>
+  <data name="Action_auth_password_changed" xml:space="preserve"><value>Contraseña cambiada</value></data>
+  <data name="Action_auth_refresh_reuse" xml:space="preserve"><value>Reutilización sospechosa de sesión</value></data>
+  <data name="Action_backup_created" xml:space="preserve"><value>Copia descargada</value></data>
+  <data name="Action_backup_restored" xml:space="preserve"><value>Copia restaurada</value></data>
+  <data name="Action_branch_created" xml:space="preserve"><value>Sede agregada</value></data>
+  <data name="Action_branch_updated" xml:space="preserve"><value>Sede modificada</value></data>
+  <data name="Action_employee_activated" xml:space="preserve"><value>Empleado activado</value></data>
+  <data name="Action_employee_created" xml:space="preserve"><value>Empleado agregado</value></data>
+  <data name="Action_employee_deactivated" xml:space="preserve"><value>Empleado desactivado</value></data>
+  <data name="Action_employee_password_reset" xml:space="preserve"><value>Contraseña restablecida</value></data>
+  <data name="Action_employee_updated" xml:space="preserve"><value>Empleado modificado</value></data>
+  <data name="Action_machine_deleted" xml:space="preserve"><value>Equipo eliminado</value></data>
+  <data name="Action_machine_group_changed" xml:space="preserve"><value>Grupo modificado</value></data>
+  <data name="Action_machine_paired" xml:space="preserve"><value>Equipo vinculado</value></data>
+  <data name="Action_machine_pairing_code_created" xml:space="preserve"><value>Código de vinculación creado</value></data>
+  <data name="Action_machine_token_reset" xml:space="preserve"><value>Equipo vinculado de nuevo</value></data>
+  <data name="Action_machine_updated" xml:space="preserve"><value>Equipo modificado</value></data>
+  <data name="Action_remote_command" xml:space="preserve"><value>Comando remoto</value></data>
+  <data name="Action_remote_command_all" xml:space="preserve"><value>Comando remoto a todos</value></data>
+  <data name="Action_remote_message" xml:space="preserve"><value>Mensaje enviado</value></data>
+  <data name="Action_remote_message_all" xml:space="preserve"><value>Mensaje a todos</value></data>
+  <data name="Action_remote_screenshot" xml:space="preserve"><value>Captura de pantalla</value></data>
+  <data name="Action_report_exported" xml:space="preserve"><value>Informe exportado</value></data>
+  <data name="Action_session_cancelled" xml:space="preserve"><value>Sesión cancelada</value></data>
+  <data name="Action_session_expired" xml:space="preserve"><value>Se acabó el tiempo</value></data>
+  <data name="Action_session_free_started" xml:space="preserve"><value>Sesión gratis iniciada</value></data>
+  <data name="Action_session_paused" xml:space="preserve"><value>Sesión pausada</value></data>
+  <data name="Action_session_resumed" xml:space="preserve"><value>Sesión reanudada</value></data>
+  <data name="Action_session_started" xml:space="preserve"><value>Sesión iniciada</value></data>
+  <data name="Action_session_stopped" xml:space="preserve"><value>Sesión terminada</value></data>
+  <data name="Action_session_time_added" xml:space="preserve"><value>Tiempo agregado</value></data>
+  <data name="Action_session_time_removed" xml:space="preserve"><value>Tiempo quitado</value></data>
+  <data name="Action_session_transferred" xml:space="preserve"><value>Sesión trasladada</value></data>
+  <data name="Action_settings_admin_pin_changed" xml:space="preserve"><value>PIN de administrador cambiado</value></data>
+  <data name="Action_settings_changed" xml:space="preserve"><value>Ajustes cambiados</value></data>
+  <data name="Action_settings_permissions_changed" xml:space="preserve"><value>Permisos cambiados</value></data>
+  <data name="Action_settings_price_changed" xml:space="preserve"><value>Precio cambiado</value></data>
+  <data name="Action_setup_completed" xml:space="preserve"><value>Negocio configurado</value></data>
+  <data name="Action_shift_closed" xml:space="preserve"><value>Turno cerrado</value></data>
+  <data name="Action_shift_opened" xml:space="preserve"><value>Turno iniciado</value></data>
+  <data name="Audit_All" xml:space="preserve"><value>Todas las acciones</value></data>
+  <data name="Audit_Apply" xml:space="preserve"><value>Buscar</value></data>
+  <data name="Audit_Backups" xml:space="preserve"><value>Copias de seguridad</value></data>
+  <data name="Audit_Employees" xml:space="preserve"><value>Empleados</value></data>
+  <data name="Audit_Hint" xml:space="preserve"><value>Cada acción sensible, quién la hizo y cuándo. Los registros no se pueden cambiar ni borrar.</value></data>
+  <data name="Audit_Logins" xml:space="preserve"><value>Ingresos</value></data>
+  <data name="Audit_Machines" xml:space="preserve"><value>Equipos</value></data>
+  <data name="Audit_Next" xml:space="preserve"><value>Siguiente</value></data>
+  <data name="Audit_Page" xml:space="preserve"><value>Página {0} de {1} · {2} registros</value></data>
+  <data name="Audit_Previous" xml:space="preserve"><value>Anterior</value></data>
+  <data name="Audit_Remote" xml:space="preserve"><value>Control remoto</value></data>
+  <data name="Audit_Search" xml:space="preserve"><value>Buscar usuario, equipo, motivo…</value></data>
+  <data name="Audit_Sessions" xml:space="preserve"><value>Sesiones</value></data>
+  <data name="Audit_Settings" xml:space="preserve"><value>Ajustes y precios</value></data>
+  <data name="Audit_Shifts" xml:space="preserve"><value>Turnos</value></data>
+  <data name="Audit_System" xml:space="preserve"><value>Sistema</value></data>
+  <data name="Audit_ThisBranch" xml:space="preserve"><value>Solo esta sede</value></data>
+  <data name="Cmd_Lock" xml:space="preserve"><value>Bloquear</value></data>
+  <data name="Cmd_Restart" xml:space="preserve"><value>Reiniciar</value></data>
+  <data name="Cmd_Shutdown" xml:space="preserve"><value>Apagar</value></data>
+  <data name="Col_Action" xml:space="preserve"><value>Acción</value></data>
+  <data name="Col_Closed" xml:space="preserve"><value>Cierre</value></data>
+  <data name="Col_Details" xml:space="preserve"><value>Detalles</value></data>
+  <data name="Col_Employee" xml:space="preserve"><value>Empleado</value></data>
+  <data name="Col_LastLogin" xml:space="preserve"><value>Último ingreso</value></data>
+  <data name="Col_Machine" xml:space="preserve"><value>Equipo</value></data>
+  <data name="Col_Opened" xml:space="preserve"><value>Apertura</value></data>
+  <data name="Col_Role" xml:space="preserve"><value>Rol</value></data>
+  <data name="Col_Status" xml:space="preserve"><value>Estado</value></data>
+  <data name="Col_Time" xml:space="preserve"><value>Hora</value></data>
+  <data name="Col_User" xml:space="preserve"><value>Usuario</value></data>
+  <data name="Common_Add" xml:space="preserve"><value>Agregar</value></data>
+  <data name="Common_Back" xml:space="preserve"><value>Atrás</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Cancelar</value></data>
+  <data name="Common_Close" xml:space="preserve"><value>Cerrar</value></data>
+  <data name="Common_Delete" xml:space="preserve"><value>Eliminar</value></data>
+  <data name="Common_Edit" xml:space="preserve"><value>Editar</value></data>
+  <data name="Common_ExportCsv" xml:space="preserve"><value>Exportar CSV</value></data>
+  <data name="Common_ExportPdf" xml:space="preserve"><value>Exportar PDF</value></data>
+  <data name="Common_FileTooLarge" xml:space="preserve"><value>El archivo es demasiado grande.</value></data>
+  <data name="Common_InvalidAmount" xml:space="preserve"><value>Escribe un valor válido.</value></data>
+  <data name="Common_Next" xml:space="preserve"><value>Siguiente</value></data>
+  <data name="Common_Ok" xml:space="preserve"><value>Aceptar</value></data>
+  <data name="Common_Reason" xml:space="preserve"><value>Motivo</value></data>
+  <data name="Common_ReasonHint" xml:space="preserve"><value>¿Por qué es necesario? Queda guardado en el registro de auditoría.</value></data>
+  <data name="Common_ReasonOptional" xml:space="preserve"><value>Motivo (opcional)</value></data>
+  <data name="Common_Refresh" xml:space="preserve"><value>Actualizar</value></data>
+  <data name="Common_Required" xml:space="preserve"><value>Completa los campos obligatorios.</value></data>
+  <data name="Common_Save" xml:space="preserve"><value>Guardar</value></data>
+  <data name="Common_SaveAs" xml:space="preserve"><value>Guardar como…</value></data>
+  <data name="Conn_Connected" xml:space="preserve"><value>Conectado</value></data>
+  <data name="Conn_Connecting" xml:space="preserve"><value>Conectando…</value></data>
+  <data name="Conn_LostMessage" xml:space="preserve"><value>Intentando reconectar. Los tiempos siguen corriendo en el servidor y en los equipos; lo que ves aquí puede estar desactualizado.</value></data>
+  <data name="Conn_LostTitle" xml:space="preserve"><value>Se perdió la conexión</value></data>
+  <data name="Conn_Reconnecting" xml:space="preserve"><value>Reconectando…</value></data>
+  <data name="Connect_Button" xml:space="preserve"><value>Conectar</value></data>
+  <data name="Connect_Certificate" xml:space="preserve"><value>El certificado del servidor no es de confianza. Escribe su huella SHA-256 (consulta la guía de despliegue).</value></data>
+  <data name="Connect_Fingerprint" xml:space="preserve"><value>Huella del certificado (opcional)</value></data>
+  <data name="Connect_FingerprintHint" xml:space="preserve"><value>Solo para servidores sin nombre de dominio</value></data>
+  <data name="Connect_InvalidAddress" xml:space="preserve"><value>La dirección del servidor no es válida.</value></data>
+  <data name="Connect_Server" xml:space="preserve"><value>Dirección del servidor</value></data>
+  <data name="Connect_Subtitle" xml:space="preserve"><value>Escribe la dirección de tu servidor TelloGameRoom.</value></data>
+  <data name="Connect_Title" xml:space="preserve"><value>Conéctate a tu servidor</value></data>
+  <data name="Employees_Active" xml:space="preserve"><value>Activo</value></data>
+  <data name="Employees_ActiveToggle" xml:space="preserve"><value>La cuenta está activa</value></data>
+  <data name="Employees_Add" xml:space="preserve"><value>Agregar empleado</value></data>
+  <data name="Employees_AddTitle" xml:space="preserve"><value>Nuevo empleado</value></data>
+  <data name="Employees_AllBranches" xml:space="preserve"><value>Todas las sedes</value></data>
+  <data name="Employees_Branches" xml:space="preserve"><value>Sedes</value></data>
+  <data name="Employees_Deactivate" xml:space="preserve"><value>Desactivar</value></data>
+  <data name="Employees_DeactivateMessage" xml:space="preserve"><value>Sale de inmediato y no podrá entrar hasta que actives la cuenta de nuevo. Su historial se conserva.</value></data>
+  <data name="Employees_DeactivateTitle" xml:space="preserve"><value>¿Desactivar a {0}?</value></data>
+  <data name="Employees_DisplayName" xml:space="preserve"><value>Nombre</value></data>
+  <data name="Employees_EditTitle" xml:space="preserve"><value>Editar a {0}</value></data>
+  <data name="Employees_Inactive" xml:space="preserve"><value>Desactivado</value></data>
+  <data name="Employees_IsOwner" xml:space="preserve"><value>Dueño (acceso total)</value></data>
+  <data name="Employees_IsOwnerHint" xml:space="preserve"><value>Los dueños pueden cambiar precios, ajustes y empleados.</value></data>
+  <data name="Employees_LockedOut" xml:space="preserve"><value>Bloqueado (demasiados intentos)</value></data>
+  <data name="Employees_Permissions" xml:space="preserve"><value>Qué pueden hacer los empleados</value></data>
+  <data name="Employees_PermissionsHint" xml:space="preserve"><value>Se aplica a todos los empleados al instante. Precios, ajustes, informes y tiempo gratis siempre son solo del dueño.</value></data>
+  <data name="Employees_ResetDone" xml:space="preserve"><value>Se cambió la contraseña de {0}.</value></data>
+  <data name="Employees_ResetMessage" xml:space="preserve"><value>El empleado sale de todas partes y se quita cualquier bloqueo.</value></data>
+  <data name="Employees_ResetPassword" xml:space="preserve"><value>Restablecer contraseña</value></data>
+  <data name="Employees_ResetTitle" xml:space="preserve"><value>Nueva contraseña para {0}</value></data>
+  <data name="Employees_ToggleActive" xml:space="preserve"><value>Activar o desactivar</value></data>
+  <data name="Err_account_disabled" xml:space="preserve"><value>Esta cuenta fue desactivada.</value></data>
+  <data name="Err_account_locked" xml:space="preserve"><value>Demasiados intentos fallidos. Espera unos minutos o pide al dueño que restablezca tu contraseña.</value></data>
+  <data name="Err_forbidden" xml:space="preserve"><value>No tienes permiso para hacer esto.</value></data>
+  <data name="Err_invalid_credentials" xml:space="preserve"><value>Usuario o contraseña incorrectos.</value></data>
+  <data name="Err_invalid_refresh_token" xml:space="preserve"><value>Tu sesión terminó. Inicia sesión de nuevo.</value></data>
+  <data name="Err_invalid_session_state" xml:space="preserve"><value>Eso no es posible en el estado actual de la sesión.</value></data>
+  <data name="Err_last_owner" xml:space="preserve"><value>El negocio necesita al menos un dueño activo, y no puedes quitarte tu propio acceso.</value></data>
+  <data name="Err_machine_busy" xml:space="preserve"><value>Este equipo ya tiene una sesión.</value></data>
+  <data name="Err_machine_disabled" xml:space="preserve"><value>Este equipo está deshabilitado.</value></data>
+  <data name="Err_machine_offline" xml:space="preserve"><value>Este equipo está sin conexión.</value></data>
+  <data name="Err_network" xml:space="preserve"><value>No se pudo conectar con el servidor. Revisa la conexión.</value></data>
+  <data name="Err_no_open_session" xml:space="preserve"><value>Este equipo no tiene sesión.</value></data>
+  <data name="Err_no_open_shift" xml:space="preserve"><value>No hay un turno abierto.</value></data>
+  <data name="Err_not_found" xml:space="preserve"><value>Esto ya no existe. Actualiza e inténtalo de nuevo.</value></data>
+  <data name="Err_price_changed" xml:space="preserve"><value>El precio cambió. Revisa el valor y confirma de nuevo.</value></data>
+  <data name="Err_protocol_mismatch" xml:space="preserve"><value>Este panel y el servidor son de versiones distintas. Actualiza ambos.</value></data>
+  <data name="Err_rate_limited" xml:space="preserve"><value>Demasiados intentos. Espera un minuto.</value></data>
+  <data name="Err_reason_required" xml:space="preserve"><value>Se requiere un motivo.</value></data>
+  <data name="Err_setup_already_completed" xml:space="preserve"><value>Este servidor ya está configurado.</value></data>
+  <data name="Err_shift_already_open" xml:space="preserve"><value>Ya tienes un turno abierto.</value></data>
+  <data name="Err_shift_required" xml:space="preserve"><value>Inicia tu turno antes de vender.</value></data>
+  <data name="Err_timeout" xml:space="preserve"><value>El equipo no respondió a tiempo.</value></data>
+  <data name="Login_Button" xml:space="preserve"><value>Entrar</value></data>
+  <data name="Login_ChangeServer" xml:space="preserve"><value>Cambiar servidor</value></data>
+  <data name="Login_Expired" xml:space="preserve"><value>Tu sesión terminó. Inicia sesión de nuevo.</value></data>
+  <data name="Login_Fill" xml:space="preserve"><value>Escribe tu usuario y contraseña.</value></data>
+  <data name="Login_Password" xml:space="preserve"><value>Contraseña</value></data>
+  <data name="Login_Subtitle" xml:space="preserve"><value>Usa tu propio usuario y contraseña.</value></data>
+  <data name="Login_Title" xml:space="preserve"><value>Iniciar sesión</value></data>
+  <data name="Login_Username" xml:space="preserve"><value>Usuario</value></data>
+  <data name="Machines_AddMachine" xml:space="preserve"><value>Agregar equipo</value></data>
+  <data name="Machines_AddTime" xml:space="preserve"><value>Agregar tiempo</value></data>
+  <data name="Machines_AllMachines" xml:space="preserve"><value>Todos los equipos</value></data>
+  <data name="Machines_CancelConfirm" xml:space="preserve"><value>Cancelar sesión</value></data>
+  <data name="Machines_CancelMessage" xml:space="preserve"><value>El cliente pagó {0}. Deja la devolución vacía para devolver el tiempo no usado.</value></data>
+  <data name="Machines_CancelRefund" xml:space="preserve"><value>Cancelar y devolver</value></data>
+  <data name="Machines_CancelTitle" xml:space="preserve"><value>¿Cancelar la sesión en {0}?</value></data>
+  <data name="Machines_ConfirmAll" xml:space="preserve"><value>{0}: ¿todos los equipos de esta sede?</value></data>
+  <data name="Machines_ConfirmOne" xml:space="preserve"><value>{0}: ¿{1}?</value></data>
+  <data name="Machines_DeleteMessage" xml:space="preserve"><value>Solo se puede eliminar un equipo que nunca tuvo sesiones. Si no, deshabilítalo.</value></data>
+  <data name="Machines_DeleteTitle" xml:space="preserve"><value>¿Eliminar {0}?</value></data>
+  <data name="Machines_Empty" xml:space="preserve"><value>Aún no hay equipos</value></data>
+  <data name="Machines_EmptyHint" xml:space="preserve"><value>Agrega un equipo para obtener su código de vinculación.</value></data>
+  <data name="Machines_Group" xml:space="preserve"><value>Grupo</value></data>
+  <data name="Machines_GroupNone" xml:space="preserve"><value>Aún no hay grupos. Créalos en Ajustes si quieres otro precio para algunos equipos.</value></data>
+  <data name="Machines_GroupTitle" xml:space="preserve"><value>Grupo de {0}</value></data>
+  <data name="Machines_LockAll" xml:space="preserve"><value>Bloquear todos</value></data>
+  <data name="Machines_MessageAll" xml:space="preserve"><value>Mensaje a todos</value></data>
+  <data name="Machines_MessageAllTitle" xml:space="preserve"><value>Mensaje para todos los equipos</value></data>
+  <data name="Machines_MessageSent" xml:space="preserve"><value>Mensaje enviado a {0}.</value></data>
+  <data name="Machines_MessageText" xml:space="preserve"><value>Mensaje</value></data>
+  <data name="Machines_MessageTitle" xml:space="preserve"><value>Mensaje para {0}</value></data>
+  <data name="Machines_More" xml:space="preserve"><value>Más acciones</value></data>
+  <data name="Machines_Name" xml:space="preserve"><value>Nombre del equipo</value></data>
+  <data name="Machines_NoFreeTarget" xml:space="preserve"><value>No hay ningún equipo libre para pasar la sesión.</value></data>
+  <data name="Machines_NoGroup" xml:space="preserve"><value>Sin grupo (precio de la sede)</value></data>
+  <data name="Machines_OfflineStart" xml:space="preserve"><value>{0} no está conectado. Si inicias una sesión ahora, el tiempo correrá aunque el equipo siga bloqueado.</value></data>
+  <data name="Machines_OfflineTitle" xml:space="preserve"><value>Este equipo está sin conexión</value></data>
+  <data name="Machines_PairCodeMessage" xml:space="preserve"><value>Escribe este código en la app del equipo. Sirve una sola vez y vence a las {0}.</value></data>
+  <data name="Machines_PairCodeTitle" xml:space="preserve"><value>Código para {0}</value></data>
+  <data name="Machines_PairCreate" xml:space="preserve"><value>Crear código</value></data>
+  <data name="Machines_PairMessage" xml:space="preserve"><value>Elige un nombre. Recibirás un código para escribir en la app del equipo.</value></data>
+  <data name="Machines_PairTitle" xml:space="preserve"><value>Agregar un equipo</value></data>
+  <data name="Machines_Pause" xml:space="preserve"><value>Pausar</value></data>
+  <data name="Machines_PauseResume" xml:space="preserve"><value>Pausar o reanudar</value></data>
+  <data name="Machines_RefundAmount" xml:space="preserve"><value>Valor a devolver (opcional)</value></data>
+  <data name="Machines_RemoveTime" xml:space="preserve"><value>Quitar tiempo</value></data>
+  <data name="Machines_Rename" xml:space="preserve"><value>Cambiar nombre</value></data>
+  <data name="Machines_RenameTitle" xml:space="preserve"><value>Cambiar nombre de {0}</value></data>
+  <data name="Machines_RepairCode" xml:space="preserve"><value>Nuevo código de vinculación</value></data>
+  <data name="Machines_RepairMessage" xml:space="preserve"><value>Úsalo después de reinstalar Windows. El equipo conserva su nombre e historial; la conexión anterior deja de funcionar cuando se use el código nuevo.</value></data>
+  <data name="Machines_RepairTitle" xml:space="preserve"><value>¿Volver a vincular {0}?</value></data>
+  <data name="Machines_RestartAll" xml:space="preserve"><value>Reiniciar todos</value></data>
+  <data name="Machines_Resume" xml:space="preserve"><value>Reanudar</value></data>
+  <data name="Machines_Screenshot" xml:space="preserve"><value>Capturar pantalla</value></data>
+  <data name="Machines_ScreenshotTitle" xml:space="preserve"><value>{0} · {1}</value></data>
+  <data name="Machines_Send" xml:space="preserve"><value>Enviar</value></data>
+  <data name="Machines_SendMessage" xml:space="preserve"><value>Enviar mensaje</value></data>
+  <data name="Machines_SentTo" xml:space="preserve"><value>Enviado a {0} equipos. {1} sin conexión.</value></data>
+  <data name="Machines_SetGroup" xml:space="preserve"><value>Asignar grupo</value></data>
+  <data name="Machines_ShutdownAll" xml:space="preserve"><value>Apagar todos</value></data>
+  <data name="Machines_Start" xml:space="preserve"><value>Iniciar sesión</value></data>
+  <data name="Machines_StartAnyway" xml:space="preserve"><value>Iniciar de todos modos</value></data>
+  <data name="Machines_Stop" xml:space="preserve"><value>Terminar sesión</value></data>
+  <data name="Machines_StopMessage" xml:space="preserve"><value>Quedan {0} y se perderán. No se devuelve dinero. Para devolver dinero usa «Cancelar y devolver».</value></data>
+  <data name="Machines_StopTitle" xml:space="preserve"><value>¿Terminar la sesión en {0}?</value></data>
+  <data name="Machines_Summary" xml:space="preserve"><value>{0} en uso · {1} libres · {2} sin conexión</value></data>
+  <data name="Machines_ToggleEnabled" xml:space="preserve"><value>Habilitar o deshabilitar</value></data>
+  <data name="Machines_Transfer" xml:space="preserve"><value>Pasar a otro equipo</value></data>
+  <data name="Machines_TransferMessage" xml:space="preserve"><value>El tiempo restante pasa al equipo que elijas.</value></data>
+  <data name="Machines_TransferTarget" xml:space="preserve"><value>Pasar a</value></data>
+  <data name="Machines_TransferTitle" xml:space="preserve"><value>Pasar la sesión de {0}</value></data>
+  <data name="Nav_Audit" xml:space="preserve"><value>Auditoría</value></data>
+  <data name="Nav_Employees" xml:space="preserve"><value>Empleados</value></data>
+  <data name="Nav_Machines" xml:space="preserve"><value>Equipos</value></data>
+  <data name="Nav_Overview" xml:space="preserve"><value>Resumen</value></data>
+  <data name="Nav_Reports" xml:space="preserve"><value>Informes</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>Ajustes</value></data>
+  <data name="Nav_Shifts" xml:space="preserve"><value>Turnos</value></data>
+  <data name="Perm_RemoteLock" xml:space="preserve"><value>Bloquear equipos</value></data>
+  <data name="Perm_RemoteMessage" xml:space="preserve"><value>Enviar mensajes</value></data>
+  <data name="Perm_RemotePower" xml:space="preserve"><value>Reiniciar y apagar equipos</value></data>
+  <data name="Perm_SessionsAddTime" xml:space="preserve"><value>Agregar tiempo</value></data>
+  <data name="Perm_SessionsCancelPaid" xml:space="preserve"><value>Cancelar una sesión pagada (devolución)</value></data>
+  <data name="Perm_SessionsPauseResume" xml:space="preserve"><value>Pausar y reanudar</value></data>
+  <data name="Perm_SessionsRemoveTime" xml:space="preserve"><value>Quitar tiempo (devolución)</value></data>
+  <data name="Perm_SessionsStop" xml:space="preserve"><value>Terminar una sesión</value></data>
+  <data name="Perm_SessionsTransfer" xml:space="preserve"><value>Pasar una sesión a otro equipo</value></data>
+  <data name="Quick_5Min" xml:space="preserve"><value>Quedan 5 minutos</value></data>
+  <data name="Quick_Closing" xml:space="preserve"><value>Cerramos en 10 minutos</value></data>
+  <data name="Quick_Counter" xml:space="preserve"><value>Por favor acércate a la caja</value></data>
+  <data name="Quick_Volume" xml:space="preserve"><value>Por favor baja el volumen</value></data>
+  <data name="Reports_BusiestHours" xml:space="preserve"><value>Horas más ocupadas (sesiones iniciadas)</value></data>
+  <data name="Reports_ByEmployee" xml:space="preserve"><value>Por empleado</value></data>
+  <data name="Reports_ByMachine" xml:space="preserve"><value>Por equipo</value></data>
+  <data name="Reports_HoursSold" xml:space="preserve"><value>Horas vendidas</value></data>
+  <data name="Reports_Income" xml:space="preserve"><value>Ingresos</value></data>
+  <data name="Reports_IncomeByDay" xml:space="preserve"><value>Ingresos por día</value></data>
+  <data name="Reports_Last7" xml:space="preserve"><value>Últimos 7 días</value></data>
+  <data name="Reports_LastMonth" xml:space="preserve"><value>Mes pasado</value></data>
+  <data name="Reports_Refunds" xml:space="preserve"><value>Devoluciones</value></data>
+  <data name="Reports_Sessions" xml:space="preserve"><value>Sesiones</value></data>
+  <data name="Reports_SessionsCount" xml:space="preserve"><value>{0} sesiones</value></data>
+  <data name="Reports_SessionsWithFree" xml:space="preserve"><value>{0} ({1} gratis)</value></data>
+  <data name="Reports_Show" xml:space="preserve"><value>Ver</value></data>
+  <data name="Reports_ThisMonth" xml:space="preserve"><value>Este mes</value></data>
+  <data name="Reports_Today" xml:space="preserve"><value>Hoy</value></data>
+  <data name="Reports_TodayIncome" xml:space="preserve"><value>Ingresos de hoy</value></data>
+  <data name="Role_Employee" xml:space="preserve"><value>Empleado</value></data>
+  <data name="Role_Owner" xml:space="preserve"><value>Dueño</value></data>
+  <data name="Rounding_Down" xml:space="preserve"><value>Siempre hacia abajo</value></data>
+  <data name="Rounding_Nearest" xml:space="preserve"><value>Al más cercano</value></data>
+  <data name="Rounding_None" xml:space="preserve"><value>Sin redondeo</value></data>
+  <data name="Rounding_Up" xml:space="preserve"><value>Siempre hacia arriba</value></data>
+  <data name="Settings_AddBranch" xml:space="preserve"><value>Agregar sede</value></data>
+  <data name="Settings_AddBranchMessage" xml:space="preserve"><value>La nueva sede empieza con el mismo precio y moneda que la primera.</value></data>
+  <data name="Settings_AddGroup" xml:space="preserve"><value>Nuevo grupo</value></data>
+  <data name="Settings_Backup" xml:space="preserve"><value>Copia de seguridad</value></data>
+  <data name="Settings_BackupHint" xml:space="preserve"><value>El servidor además hace una copia automática cada día y conserva las últimas 14.</value></data>
+  <data name="Settings_BackupNow" xml:space="preserve"><value>Descargar copia</value></data>
+  <data name="Settings_BackupSaved" xml:space="preserve"><value>Copia guardada.</value></data>
+  <data name="Settings_Branch" xml:space="preserve"><value>Esta sede</value></data>
+  <data name="Settings_BranchAdded" xml:space="preserve"><value>Sede agregada. Elígela en la parte superior de la ventana.</value></data>
+  <data name="Settings_BranchName" xml:space="preserve"><value>Nombre de la sede</value></data>
+  <data name="Settings_ChangePin" xml:space="preserve"><value>Cambiar PIN de administrador</value></data>
+  <data name="Settings_CurrencyCode" xml:space="preserve"><value>Código de moneda</value></data>
+  <data name="Settings_CurrencySymbol" xml:space="preserve"><value>Símbolo de moneda</value></data>
+  <data name="Settings_Dark" xml:space="preserve"><value>Oscuro</value></data>
+  <data name="Settings_Decimals" xml:space="preserve"><value>Decimales</value></data>
+  <data name="Settings_DeleteGroupMessage" xml:space="preserve"><value>Sus equipos vuelven al precio de la sede.</value></data>
+  <data name="Settings_DeleteGroupTitle" xml:space="preserve"><value>¿Eliminar {0}?</value></data>
+  <data name="Settings_EditGroup" xml:space="preserve"><value>Editar {0}</value></data>
+  <data name="Settings_GroupBranchRate" xml:space="preserve"><value>Precio de la sede</value></data>
+  <data name="Settings_GroupMessage" xml:space="preserve"><value>Los equipos de este grupo se cobran al precio del grupo.</value></data>
+  <data name="Settings_GroupName" xml:space="preserve"><value>Nombre del grupo</value></data>
+  <data name="Settings_GroupRate" xml:space="preserve"><value>Precio por hora (vacío = precio de la sede)</value></data>
+  <data name="Settings_Groups" xml:space="preserve"><value>Grupos de equipos (opcional)</value></data>
+  <data name="Settings_GroupsHint" xml:space="preserve"><value>Da a algunos equipos otro precio, por ejemplo una zona VIP. Asigna un equipo a un grupo desde su menú en la página Equipos.</value></data>
+  <data name="Settings_HourlyRate" xml:space="preserve"><value>Precio por hora</value></data>
+  <data name="Settings_InvalidNumbers" xml:space="preserve"><value>Revisa el precio y los minutos de aviso.</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Idioma</value></data>
+  <data name="Settings_Light" xml:space="preserve"><value>Claro</value></data>
+  <data name="Settings_Logo" xml:space="preserve"><value>Logo</value></data>
+  <data name="Settings_LogoHint" xml:space="preserve"><value>PNG o JPEG, hasta 1 MB. Se muestra en todas las pantallas de bloqueo.</value></data>
+  <data name="Settings_PinLabel" xml:space="preserve"><value>PIN nuevo (4 a 12 dígitos)</value></data>
+  <data name="Settings_PinMessage" xml:space="preserve"><value>Este PIN cierra la pantalla de bloqueo en un equipo (Ctrl+Shift+F12). Déjalo vacío para quitarlo; así la pantalla de bloqueo no se podrá cerrar.</value></data>
+  <data name="Settings_PinNotSet" xml:space="preserve"><value>Sin PIN</value></data>
+  <data name="Settings_PinRule" xml:space="preserve"><value>Usa de 4 a 12 dígitos.</value></data>
+  <data name="Settings_PinSet" xml:space="preserve"><value>Hay un PIN configurado</value></data>
+  <data name="Settings_PinTitle" xml:space="preserve"><value>PIN de administrador de los equipos</value></data>
+  <data name="Settings_PriceHint" xml:space="preserve"><value>Un precio nuevo solo aplica a las sesiones que se inicien después de guardar. Las sesiones en curso conservan su precio.</value></data>
+  <data name="Settings_RemoveLogo" xml:space="preserve"><value>Quitar</value></data>
+  <data name="Settings_Restore" xml:space="preserve"><value>Restaurar copia</value></data>
+  <data name="Settings_RestoreDone" xml:space="preserve"><value>La copia fue aceptada. El servidor se está reiniciando; inicia sesión de nuevo en un momento.</value></data>
+  <data name="Settings_RestoreMessage" xml:space="preserve"><value>Todo lo que hay en el servidor se reemplaza por la copia: sesiones, ventas, empleados y ajustes. El servidor se reinicia y todos salen. Los datos actuales quedan en el servidor como copia de respaldo.</value></data>
+  <data name="Settings_RestoreTitle" xml:space="preserve"><value>Restaurar una copia</value></data>
+  <data name="Settings_Rounding" xml:space="preserve"><value>Redondeo</value></data>
+  <data name="Settings_RoundingStep" xml:space="preserve"><value>Redondear a</value></data>
+  <data name="Settings_Saved" xml:space="preserve"><value>Guardado.</value></data>
+  <data name="Settings_Server" xml:space="preserve"><value>Servidor</value></data>
+  <data name="Settings_Shop" xml:space="preserve"><value>Negocio</value></data>
+  <data name="Settings_ShopLanguage" xml:space="preserve"><value>Idioma en los equipos y en las exportaciones</value></data>
+  <data name="Settings_Theme" xml:space="preserve"><value>Tema</value></data>
+  <data name="Settings_ThisComputer" xml:space="preserve"><value>Este computador</value></data>
+  <data name="Settings_TimeZone" xml:space="preserve"><value>Zona horaria (para informes diarios)</value></data>
+  <data name="Settings_UploadLogo" xml:space="preserve"><value>Subir logo</value></data>
+  <data name="Settings_Version" xml:space="preserve"><value>Versión del panel {0}</value></data>
+  <data name="Settings_WarningMinutes" xml:space="preserve"><value>Avisar al cliente (minutos antes del final)</value></data>
+  <data name="Setup_BranchHint" xml:space="preserve"><value>p. ej. Centro</value></data>
+  <data name="Setup_BranchName" xml:space="preserve"><value>Primera sede</value></data>
+  <data name="Setup_FillOwner" xml:space="preserve"><value>Escribe tu nombre y un usuario.</value></data>
+  <data name="Setup_FillShop" xml:space="preserve"><value>Escribe el nombre del negocio y de la sede.</value></data>
+  <data name="Setup_Finish" xml:space="preserve"><value>Crear y entrar</value></data>
+  <data name="Setup_HourlyRate" xml:space="preserve"><value>Precio por hora</value></data>
+  <data name="Setup_OwnerName" xml:space="preserve"><value>Tu nombre</value></data>
+  <data name="Setup_PasswordAgain" xml:space="preserve"><value>Repite la contraseña</value></data>
+  <data name="Setup_PasswordMismatch" xml:space="preserve"><value>Las contraseñas no coinciden.</value></data>
+  <data name="Setup_PasswordRule" xml:space="preserve"><value>Usa al menos 8 caracteres.</value></data>
+  <data name="Setup_RateHint" xml:space="preserve"><value>Puedes cambiarlo después en Ajustes.</value></data>
+  <data name="Setup_ShopName" xml:space="preserve"><value>Nombre del negocio</value></data>
+  <data name="Setup_Step1" xml:space="preserve"><value>Tu negocio</value></data>
+  <data name="Setup_Step2" xml:space="preserve"><value>Cuenta del dueño</value></data>
+  <data name="Setup_Subtitle" xml:space="preserve"><value>Dos pasos rápidos y tu negocio queda listo.</value></data>
+  <data name="Setup_Title" xml:space="preserve"><value>Bienvenido a TelloGameRoom</value></data>
+  <data name="Shell_NobodyOnDuty" xml:space="preserve"><value>Nadie ha iniciado turno</value></data>
+  <data name="Shell_OnDuty" xml:space="preserve"><value>En turno: {0}</value></data>
+  <data name="Shell_SignOut" xml:space="preserve"><value>Salir</value></data>
+  <data name="Shifts_Balanced" xml:space="preserve"><value>El efectivo cuadra.</value></data>
+  <data name="Shifts_Close" xml:space="preserve"><value>Cerrar turno</value></data>
+  <data name="Shifts_CloseMessage" xml:space="preserve"><value>Cuenta todo el efectivo de la caja y escribe el total.</value></data>
+  <data name="Shifts_CloseSelected" xml:space="preserve"><value>Cerrar turno seleccionado</value></data>
+  <data name="Shifts_CloseTitle" xml:space="preserve"><value>Cerrar el turno de {0}</value></data>
+  <data name="Shifts_ClosedSummary" xml:space="preserve"><value>Esperado: {0}
+Contado: {1}
+
+{2}</value></data>
+  <data name="Shifts_ClosedTitle" xml:space="preserve"><value>Turno cerrado</value></data>
+  <data name="Shifts_CountedCash" xml:space="preserve"><value>Efectivo contado</value></data>
+  <data name="Shifts_Difference" xml:space="preserve"><value>Diferencia</value></data>
+  <data name="Shifts_ExpectedCash" xml:space="preserve"><value>Efectivo esperado</value></data>
+  <data name="Shifts_History" xml:space="preserve"><value>Turnos de los últimos 30 días</value></data>
+  <data name="Shifts_NotClockedIn" xml:space="preserve"><value>No has iniciado turno</value></data>
+  <data name="Shifts_NotClockedInHint" xml:space="preserve"><value>Inicia tu turno para vender sesiones. Primero cuenta el efectivo de la caja.</value></data>
+  <data name="Shifts_Notes" xml:space="preserve"><value>Notas (opcional)</value></data>
+  <data name="Shifts_OnDuty" xml:space="preserve"><value>Tu turno está abierto</value></data>
+  <data name="Shifts_Open" xml:space="preserve"><value>Iniciar turno</value></data>
+  <data name="Shifts_OpenMessage" xml:space="preserve"><value>Cuenta el efectivo que hay en la caja en este momento.</value></data>
+  <data name="Shifts_OpenTitle" xml:space="preserve"><value>Iniciar tu turno</value></data>
+  <data name="Shifts_OpeningCash" xml:space="preserve"><value>Efectivo inicial</value></data>
+  <data name="Shifts_Over" xml:space="preserve"><value>Sobran {0}.</value></data>
+  <data name="Shifts_Print" xml:space="preserve"><value>Informe del turno (PDF)</value></data>
+  <data name="Shifts_Refunds" xml:space="preserve"><value>Devoluciones</value></data>
+  <data name="Shifts_Sales" xml:space="preserve"><value>Ventas</value></data>
+  <data name="Shifts_Short" xml:space="preserve"><value>Faltan {0}.</value></data>
+  <data name="Shifts_StillOpen" xml:space="preserve"><value>Abierto</value></data>
+  <data name="Status_Free" xml:space="preserve"><value>Libre</value></data>
+  <data name="Status_InUse" xml:space="preserve"><value>En uso</value></data>
+  <data name="Status_InUseOffline" xml:space="preserve"><value>En uso · sin conexión</value></data>
+  <data name="Status_Offline" xml:space="preserve"><value>Sin conexión</value></data>
+  <data name="Status_Paused" xml:space="preserve"><value>En pausa</value></data>
+  <data name="Time_AddConfirm" xml:space="preserve"><value>Agregar tiempo</value></data>
+  <data name="Time_AddTitle" xml:space="preserve"><value>Agregar tiempo a {0}</value></data>
+  <data name="Time_Collect" xml:space="preserve"><value>Valor a cobrar</value></data>
+  <data name="Time_Custom" xml:space="preserve"><value>Otro tiempo (minutos)</value></data>
+  <data name="Time_CustomHint" xml:space="preserve"><value>p. ej. 45</value></data>
+  <data name="Time_Free" xml:space="preserve"><value>Gratis</value></data>
+  <data name="Time_FreeToggle" xml:space="preserve"><value>Sesión gratis (requiere motivo)</value></data>
+  <data name="Time_Rate" xml:space="preserve"><value>{0} por hora</value></data>
+  <data name="Time_Refund" xml:space="preserve"><value>Valor a devolver</value></data>
+  <data name="Time_RemoveConfirm" xml:space="preserve"><value>Quitar tiempo</value></data>
+  <data name="Time_RemoveTitle" xml:space="preserve"><value>Quitar tiempo a {0}</value></data>
+  <data name="Time_StartConfirm" xml:space="preserve"><value>Iniciar sesión</value></data>
+  <data name="Time_StartTitle" xml:space="preserve"><value>Iniciar sesión en {0}</value></data>
+</root>

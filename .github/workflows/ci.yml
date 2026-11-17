@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  server:
+    name: Build and test (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Check translations
+        run: python3 tools/check_strings.py src/TelloGameRoom.Dashboard src/TelloGameRoom.Machine
+      - run: dotnet build -c Release
+      - run: dotnet test -c Release --no-build
+      - name: Build the server image
+        run: docker build -f deploy/docker/Dockerfile -t tellogameroom-server .
+
+  windows:
+    name: Windows apps and installers
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - run: dotnet build -c Release
+      - name: Install Inno Setup
+        run: choco install innosetup --no-progress -y
+      - name: Build installers
+        run: powershell -ExecutionPolicy Bypass -File deploy\installer\build-installers.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: installers
+          path: deploy/installer/Output/*.exe

@@ -1,0 +1,14 @@
+# For a server with a host name (for example a free one from a dynamic-DNS provider pointing at your IPv4 address).
+# Caddy obtains and renews a Let's Encrypt certificate automatically. Ports 80 and 443 must be reachable.
+# Clients need no fingerprint: just enter the host name.
+
+{$TELLO_ADDRESS} {
+	encode zstd gzip
+	reverse_proxy server:8080
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		-Server
+	}
+}

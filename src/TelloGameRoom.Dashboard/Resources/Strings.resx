@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Action_audit_exported" xml:space="preserve"><value>Audit log exported</value></data>
+  <data name="Action_auth_lockout" xml:space="preserve"><value>Account locked</value></data>
+  <data name="Action_auth_login" xml:space="preserve"><value>Signed in</value></data>
+  <data name="Action_auth_login_failed" xml:space="preserve"><value>Failed sign-in</value></data>
+  <data name="Action_auth_logout" xml:space="preserve"><value>Signed out</value></data>
+  <data name="Action_auth_password_changed" xml:space="preserve"><value>Password changed</value></data>
+  <data name="Action_auth_refresh_reuse" xml:space="preserve"><value>Suspicious session reuse</value></data>
+  <data name="Action_backup_created" xml:space="preserve"><value>Backup downloaded</value></data>
+  <data name="Action_backup_restored" xml:space="preserve"><value>Backup restored</value></data>
+  <data name="Action_branch_created" xml:space="preserve"><value>Branch added</value></data>
+  <data name="Action_branch_updated" xml:space="preserve"><value>Branch changed</value></data>
+  <data name="Action_employee_activated" xml:space="preserve"><value>Employee activated</value></data>
+  <data name="Action_employee_created" xml:space="preserve"><value>Employee added</value></data>
+  <data name="Action_employee_deactivated" xml:space="preserve"><value>Employee deactivated</value></data>
+  <data name="Action_employee_password_reset" xml:space="preserve"><value>Password reset</value></data>
+  <data name="Action_employee_updated" xml:space="preserve"><value>Employee changed</value></data>
+  <data name="Action_machine_deleted" xml:space="preserve"><value>PC deleted</value></data>
+  <data name="Action_machine_group_changed" xml:space="preserve"><value>Group changed</value></data>
+  <data name="Action_machine_paired" xml:space="preserve"><value>PC paired</value></data>
+  <data name="Action_machine_pairing_code_created" xml:space="preserve"><value>Pairing code created</value></data>
+  <data name="Action_machine_token_reset" xml:space="preserve"><value>PC re-paired</value></data>
+  <data name="Action_machine_updated" xml:space="preserve"><value>PC changed</value></data>
+  <data name="Action_remote_command" xml:space="preserve"><value>Remote command</value></data>
+  <data name="Action_remote_command_all" xml:space="preserve"><value>Remote command to all</value></data>
+  <data name="Action_remote_message" xml:space="preserve"><value>Message sent</value></data>
+  <data name="Action_remote_message_all" xml:space="preserve"><value>Message to all</value></data>
+  <data name="Action_remote_screenshot" xml:space="preserve"><value>Screenshot taken</value></data>
+  <data name="Action_report_exported" xml:space="preserve"><value>Report exported</value></data>
+  <data name="Action_session_cancelled" xml:space="preserve"><value>Session cancelled</value></data>
+  <data name="Action_session_expired" xml:space="preserve"><value>Time ran out</value></data>
+  <data name="Action_session_free_started" xml:space="preserve"><value>Free session started</value></data>
+  <data name="Action_session_paused" xml:space="preserve"><value>Session paused</value></data>
+  <data name="Action_session_resumed" xml:space="preserve"><value>Session resumed</value></data>
+  <data name="Action_session_started" xml:space="preserve"><value>Session started</value></data>
+  <data name="Action_session_stopped" xml:space="preserve"><value>Session stopped</value></data>
+  <data name="Action_session_time_added" xml:space="preserve"><value>Time added</value></data>
+  <data name="Action_session_time_removed" xml:space="preserve"><value>Time removed</value></data>
+  <data name="Action_session_transferred" xml:space="preserve"><value>Session moved</value></data>
+  <data name="Action_settings_admin_pin_changed" xml:space="preserve"><value>Admin PIN changed</value></data>
+  <data name="Action_settings_changed" xml:space="preserve"><value>Settings changed</value></data>
+  <data name="Action_settings_permissions_changed" xml:space="preserve"><value>Permissions changed</value></data>
+  <data name="Action_settings_price_changed" xml:space="preserve"><value>Price changed</value></data>
+  <data name="Action_setup_completed" xml:space="preserve"><value>Shop set up</value></data>
+  <data name="Action_shift_closed" xml:space="preserve"><value>Shift closed</value></data>
+  <data name="Action_shift_opened" xml:space="preserve"><value>Shift started</value></data>
+  <data name="Audit_All" xml:space="preserve"><value>All actions</value></data>
+  <data name="Audit_Apply" xml:space="preserve"><value>Search</value></data>
+  <data name="Audit_Backups" xml:space="preserve"><value>Backups</value></data>
+  <data name="Audit_Employees" xml:space="preserve"><value>Employees</value></data>
+  <data name="Audit_Hint" xml:space="preserve"><value>Every sensitive action, who did it and when. Entries cannot be changed or deleted.</value></data>
+  <data name="Audit_Logins" xml:space="preserve"><value>Sign-ins</value></data>
+  <data name="Audit_Machines" xml:space="preserve"><value>PCs</value></data>
+  <data name="Audit_Next" xml:space="preserve"><value>Next</value></data>
+  <data name="Audit_Page" xml:space="preserve"><value>Page {0} of {1} · {2} entries</value></data>
+  <data name="Audit_Previous" xml:space="preserve"><value>Previous</value></data>
+  <data name="Audit_Remote" xml:space="preserve"><value>Remote control</value></data>
+  <data name="Audit_Search" xml:space="preserve"><value>Search user, PC, reason…</value></data>
+  <data name="Audit_Sessions" xml:space="preserve"><value>Sessions</value></data>
+  <data name="Audit_Settings" xml:space="preserve"><value>Settings and prices</value></data>
+  <data name="Audit_Shifts" xml:space="preserve"><value>Shifts</value></data>
+  <data name="Audit_System" xml:space="preserve"><value>System</value></data>
+  <data name="Audit_ThisBranch" xml:space="preserve"><value>This branch only</value></data>
+  <data name="Cmd_Lock" xml:space="preserve"><value>Lock</value></data>
+  <data name="Cmd_Restart" xml:space="preserve"><value>Restart</value></data>
+  <data name="Cmd_Shutdown" xml:space="preserve"><value>Shut down</value></data>
+  <data name="Col_Action" xml:space="preserve"><value>Action</value></data>
+  <data name="Col_Closed" xml:space="preserve"><value>Closed</value></data>
+  <data name="Col_Details" xml:space="preserve"><value>Details</value></data>
+  <data name="Col_Employee" xml:space="preserve"><value>Employee</value></data>
+  <data name="Col_LastLogin" xml:space="preserve"><value>Last sign-in</value></data>
+  <data name="Col_Machine" xml:space="preserve"><value>PC</value></data>
+  <data name="Col_Opened" xml:space="preserve"><value>Opened</value></data>
+  <data name="Col_Role" xml:space="preserve"><value>Role</value></data>
+  <data name="Col_Status" xml:space="preserve"><value>Status</value></data>
+  <data name="Col_Time" xml:space="preserve"><value>Time</value></data>
+  <data name="Col_User" xml:space="preserve"><value>User</value></data>
+  <data name="Common_Add" xml:space="preserve"><value>Add</value></data>
+  <data name="Common_Back" xml:space="preserve"><value>Back</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Common_Close" xml:space="preserve"><value>Close</value></data>
+  <data name="Common_Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Common_Edit" xml:space="preserve"><value>Edit</value></data>
+  <data name="Common_ExportCsv" xml:space="preserve"><value>Export CSV</value></data>
+  <data name="Common_ExportPdf" xml:space="preserve"><value>Export PDF</value></data>
+  <data name="Common_FileTooLarge" xml:space="preserve"><value>The file is too large.</value></data>
+  <data name="Common_InvalidAmount" xml:space="preserve"><value>Enter a valid amount.</value></data>
+  <data name="Common_Next" xml:space="preserve"><value>Next</value></data>
+  <data name="Common_Ok" xml:space="preserve"><value>OK</value></data>
+  <data name="Common_Reason" xml:space="preserve"><value>Reason</value></data>
+  <data name="Common_ReasonHint" xml:space="preserve"><value>Why is this needed? It is saved in the audit log.</value></data>
+  <data name="Common_ReasonOptional" xml:space="preserve"><value>Reason (optional)</value></data>
+  <data name="Common_Refresh" xml:space="preserve"><value>Refresh</value></data>
+  <data name="Common_Required" xml:space="preserve"><value>Fill in the required fields.</value></data>
+  <data name="Common_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Common_SaveAs" xml:space="preserve"><value>Save as…</value></data>
+  <data name="Conn_Connected" xml:space="preserve"><value>Connected</value></data>
+  <data name="Conn_Connecting" xml:space="preserve"><value>Connecting…</value></data>
+  <data name="Conn_LostMessage" xml:space="preserve"><value>Trying to reconnect. Timers keep running on the server and on the PCs; what you see here may be out of date.</value></data>
+  <data name="Conn_LostTitle" xml:space="preserve"><value>Connection lost</value></data>
+  <data name="Conn_Reconnecting" xml:space="preserve"><value>Reconnecting…</value></data>
+  <data name="Connect_Button" xml:space="preserve"><value>Connect</value></data>
+  <data name="Connect_Certificate" xml:space="preserve"><value>The server's certificate is not trusted. Enter its SHA-256 fingerprint (see the deployment guide).</value></data>
+  <data name="Connect_Fingerprint" xml:space="preserve"><value>Certificate fingerprint (optional)</value></data>
+  <data name="Connect_FingerprintHint" xml:space="preserve"><value>Only for servers without a domain name</value></data>
+  <data name="Connect_InvalidAddress" xml:space="preserve"><value>The server address is not valid.</value></data>
+  <data name="Connect_Server" xml:space="preserve"><value>Server address</value></data>
+  <data name="Connect_Subtitle" xml:space="preserve"><value>Enter the address of your TelloGameRoom server.</value></data>
+  <data name="Connect_Title" xml:space="preserve"><value>Connect to your server</value></data>
+  <data name="Employees_Active" xml:space="preserve"><value>Active</value></data>
+  <data name="Employees_ActiveToggle" xml:space="preserve"><value>Account is active</value></data>
+  <data name="Employees_Add" xml:space="preserve"><value>Add employee</value></data>
+  <data name="Employees_AddTitle" xml:space="preserve"><value>New employee</value></data>
+  <data name="Employees_AllBranches" xml:space="preserve"><value>All branches</value></data>
+  <data name="Employees_Branches" xml:space="preserve"><value>Branches</value></data>
+  <data name="Employees_Deactivate" xml:space="preserve"><value>Deactivate</value></data>
+  <data name="Employees_DeactivateMessage" xml:space="preserve"><value>They are signed out immediately and cannot sign in until you activate the account again. Their history is kept.</value></data>
+  <data name="Employees_DeactivateTitle" xml:space="preserve"><value>Deactivate {0}?</value></data>
+  <data name="Employees_DisplayName" xml:space="preserve"><value>Name</value></data>
+  <data name="Employees_EditTitle" xml:space="preserve"><value>Edit {0}</value></data>
+  <data name="Employees_Inactive" xml:space="preserve"><value>Deactivated</value></data>
+  <data name="Employees_IsOwner" xml:space="preserve"><value>Owner (full access)</value></data>
+  <data name="Employees_IsOwnerHint" xml:space="preserve"><value>Owners can change prices, settings and employees.</value></data>
+  <data name="Employees_LockedOut" xml:space="preserve"><value>Locked (too many attempts)</value></data>
+  <data name="Employees_Permissions" xml:space="preserve"><value>What employees may do</value></data>
+  <data name="Employees_PermissionsHint" xml:space="preserve"><value>Applies to every employee at once. Prices, settings, reports and free time are always owner-only.</value></data>
+  <data name="Employees_ResetDone" xml:space="preserve"><value>The password of {0} was changed.</value></data>
+  <data name="Employees_ResetMessage" xml:space="preserve"><value>The employee is signed out everywhere and any lockout is cleared.</value></data>
+  <data name="Employees_ResetPassword" xml:space="preserve"><value>Reset password</value></data>
+  <data name="Employees_ResetTitle" xml:space="preserve"><value>New password for {0}</value></data>
+  <data name="Employees_ToggleActive" xml:space="preserve"><value>Activate or deactivate</value></data>
+  <data name="Err_account_disabled" xml:space="preserve"><value>This account has been deactivated.</value></data>
+  <data name="Err_account_locked" xml:space="preserve"><value>Too many failed attempts. Wait a few minutes or ask the owner to reset your password.</value></data>
+  <data name="Err_forbidden" xml:space="preserve"><value>You do not have permission to do this.</value></data>
+  <data name="Err_invalid_credentials" xml:space="preserve"><value>Wrong username or password.</value></data>
+  <data name="Err_invalid_refresh_token" xml:space="preserve"><value>Your session has ended. Sign in again.</value></data>
+  <data name="Err_invalid_session_state" xml:space="preserve"><value>That is not possible in the session's current state.</value></data>
+  <data name="Err_last_owner" xml:space="preserve"><value>The shop needs at least one active owner, and you cannot remove your own access.</value></data>
+  <data name="Err_machine_busy" xml:space="preserve"><value>This PC already has a session.</value></data>
+  <data name="Err_machine_disabled" xml:space="preserve"><value>This PC is disabled.</value></data>
+  <data name="Err_machine_offline" xml:space="preserve"><value>This PC is offline.</value></data>
+  <data name="Err_network" xml:space="preserve"><value>Could not reach the server. Check the connection.</value></data>
+  <data name="Err_no_open_session" xml:space="preserve"><value>This PC has no session.</value></data>
+  <data name="Err_no_open_shift" xml:space="preserve"><value>There is no open shift.</value></data>
+  <data name="Err_not_found" xml:space="preserve"><value>This no longer exists. Refresh and try again.</value></data>
+  <data name="Err_price_changed" xml:space="preserve"><value>The price has changed. Check the amount and confirm again.</value></data>
+  <data name="Err_protocol_mismatch" xml:space="preserve"><value>This Dashboard and the server are different versions. Update both.</value></data>
+  <data name="Err_rate_limited" xml:space="preserve"><value>Too many attempts. Wait a minute.</value></data>
+  <data name="Err_reason_required" xml:space="preserve"><value>A reason is required.</value></data>
+  <data name="Err_setup_already_completed" xml:space="preserve"><value>This server is already set up.</value></data>
+  <data name="Err_shift_already_open" xml:space="preserve"><value>You already have an open shift.</value></data>
+  <data name="Err_shift_required" xml:space="preserve"><value>Start your shift before selling.</value></data>
+  <data name="Err_timeout" xml:space="preserve"><value>The PC did not answer in time.</value></data>
+  <data name="Login_Button" xml:space="preserve"><value>Sign in</value></data>
+  <data name="Login_ChangeServer" xml:space="preserve"><value>Change server</value></data>
+  <data name="Login_Expired" xml:space="preserve"><value>Your session has ended. Sign in again.</value></data>
+  <data name="Login_Fill" xml:space="preserve"><value>Enter your username and password.</value></data>
+  <data name="Login_Password" xml:space="preserve"><value>Password</value></data>
+  <data name="Login_Subtitle" xml:space="preserve"><value>Use your own username and password.</value></data>
+  <data name="Login_Title" xml:space="preserve"><value>Sign in</value></data>
+  <data name="Login_Username" xml:space="preserve"><value>Username</value></data>
+  <data name="Machines_AddMachine" xml:space="preserve"><value>Add PC</value></data>
+  <data name="Machines_AddTime" xml:space="preserve"><value>Add time</value></data>
+  <data name="Machines_AllMachines" xml:space="preserve"><value>All PCs</value></data>
+  <data name="Machines_CancelConfirm" xml:space="preserve"><value>Cancel session</value></data>
+  <data name="Machines_CancelMessage" xml:space="preserve"><value>The customer paid {0}. Leave the refund empty to give back the unused time.</value></data>
+  <data name="Machines_CancelRefund" xml:space="preserve"><value>Cancel and refund</value></data>
+  <data name="Machines_CancelTitle" xml:space="preserve"><value>Cancel the session on {0}?</value></data>
+  <data name="Machines_ConfirmAll" xml:space="preserve"><value>{0}: every PC in this branch?</value></data>
+  <data name="Machines_ConfirmOne" xml:space="preserve"><value>{0}: {1}?</value></data>
+  <data name="Machines_DeleteMessage" xml:space="preserve"><value>Only a PC that never had a session can be deleted. Otherwise disable it.</value></data>
+  <data name="Machines_DeleteTitle" xml:space="preserve"><value>Delete {0}?</value></data>
+  <data name="Machines_Empty" xml:space="preserve"><value>No PCs yet</value></data>
+  <data name="Machines_EmptyHint" xml:space="preserve"><value>Add a PC to get its pairing code.</value></data>
+  <data name="Machines_Group" xml:space="preserve"><value>Group</value></data>
+  <data name="Machines_GroupNone" xml:space="preserve"><value>No groups yet. Create them in Settings if you want a different price for some PCs.</value></data>
+  <data name="Machines_GroupTitle" xml:space="preserve"><value>Group of {0}</value></data>
+  <data name="Machines_LockAll" xml:space="preserve"><value>Lock all</value></data>
+  <data name="Machines_MessageAll" xml:space="preserve"><value>Message all</value></data>
+  <data name="Machines_MessageAllTitle" xml:space="preserve"><value>Message to all PCs</value></data>
+  <data name="Machines_MessageSent" xml:space="preserve"><value>Message sent to {0}.</value></data>
+  <data name="Machines_MessageText" xml:space="preserve"><value>Message</value></data>
+  <data name="Machines_MessageTitle" xml:space="preserve"><value>Message to {0}</value></data>
+  <data name="Machines_More" xml:space="preserve"><value>More actions</value></data>
+  <data name="Machines_Name" xml:space="preserve"><value>PC name</value></data>
+  <data name="Machines_NoFreeTarget" xml:space="preserve"><value>There is no free PC to move the session to.</value></data>
+  <data name="Machines_NoGroup" xml:space="preserve"><value>No group (branch price)</value></data>
+  <data name="Machines_OfflineStart" xml:space="preserve"><value>{0} is not connected. If you start a session now, the time will run even though the PC may still be locked.</value></data>
+  <data name="Machines_OfflineTitle" xml:space="preserve"><value>This PC is offline</value></data>
+  <data name="Machines_PairCodeMessage" xml:space="preserve"><value>Type this code into the Machine app on that PC. It works once and expires at {0}.</value></data>
+  <data name="Machines_PairCodeTitle" xml:space="preserve"><value>Pairing code for {0}</value></data>
+  <data name="Machines_PairCreate" xml:space="preserve"><value>Create code</value></data>
+  <data name="Machines_PairMessage" xml:space="preserve"><value>Choose a name. You will get a code to type into the Machine app on that PC.</value></data>
+  <data name="Machines_PairTitle" xml:space="preserve"><value>Add a PC</value></data>
+  <data name="Machines_Pause" xml:space="preserve"><value>Pause</value></data>
+  <data name="Machines_PauseResume" xml:space="preserve"><value>Pause or resume</value></data>
+  <data name="Machines_RefundAmount" xml:space="preserve"><value>Refund amount (optional)</value></data>
+  <data name="Machines_RemoveTime" xml:space="preserve"><value>Remove time</value></data>
+  <data name="Machines_Rename" xml:space="preserve"><value>Rename</value></data>
+  <data name="Machines_RenameTitle" xml:space="preserve"><value>Rename {0}</value></data>
+  <data name="Machines_RepairCode" xml:space="preserve"><value>New pairing code</value></data>
+  <data name="Machines_RepairMessage" xml:space="preserve"><value>Use this after reinstalling Windows. The PC keeps its name and history; its old connection stops working once the new code is used.</value></data>
+  <data name="Machines_RepairTitle" xml:space="preserve"><value>Re-pair {0}?</value></data>
+  <data name="Machines_RestartAll" xml:space="preserve"><value>Restart all</value></data>
+  <data name="Machines_Resume" xml:space="preserve"><value>Resume</value></data>
+  <data name="Machines_Screenshot" xml:space="preserve"><value>Take screenshot</value></data>
+  <data name="Machines_ScreenshotTitle" xml:space="preserve"><value>{0} · {1}</value></data>
+  <data name="Machines_Send" xml:space="preserve"><value>Send</value></data>
+  <data name="Machines_SendMessage" xml:space="preserve"><value>Send message</value></data>
+  <data name="Machines_SentTo" xml:space="preserve"><value>Sent to {0} PCs. {1} offline.</value></data>
+  <data name="Machines_SetGroup" xml:space="preserve"><value>Set group</value></data>
+  <data name="Machines_ShutdownAll" xml:space="preserve"><value>Shut down all</value></data>
+  <data name="Machines_Start" xml:space="preserve"><value>Start session</value></data>
+  <data name="Machines_StartAnyway" xml:space="preserve"><value>Start anyway</value></data>
+  <data name="Machines_Stop" xml:space="preserve"><value>Stop session</value></data>
+  <data name="Machines_StopMessage" xml:space="preserve"><value>{0} is left and will be lost. No money is refunded. To give money back, use "Cancel and refund" instead.</value></data>
+  <data name="Machines_StopTitle" xml:space="preserve"><value>Stop the session on {0}?</value></data>
+  <data name="Machines_Summary" xml:space="preserve"><value>{0} in use · {1} free · {2} offline</value></data>
+  <data name="Machines_ToggleEnabled" xml:space="preserve"><value>Enable or disable</value></data>
+  <data name="Machines_Transfer" xml:space="preserve"><value>Move to another PC</value></data>
+  <data name="Machines_TransferMessage" xml:space="preserve"><value>The remaining time moves to the PC you choose.</value></data>
+  <data name="Machines_TransferTarget" xml:space="preserve"><value>Move to</value></data>
+  <data name="Machines_TransferTitle" xml:space="preserve"><value>Move the session from {0}</value></data>
+  <data name="Nav_Audit" xml:space="preserve"><value>Audit log</value></data>
+  <data name="Nav_Employees" xml:space="preserve"><value>Employees</value></data>
+  <data name="Nav_Machines" xml:space="preserve"><value>Machines</value></data>
+  <data name="Nav_Overview" xml:space="preserve"><value>Overview</value></data>
+  <data name="Nav_Reports" xml:space="preserve"><value>Reports</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>Settings</value></data>
+  <data name="Nav_Shifts" xml:space="preserve"><value>Shifts</value></data>
+  <data name="Perm_RemoteLock" xml:space="preserve"><value>Lock PCs</value></data>
+  <data name="Perm_RemoteMessage" xml:space="preserve"><value>Send messages</value></data>
+  <data name="Perm_RemotePower" xml:space="preserve"><value>Restart and shut down PCs</value></data>
+  <data name="Perm_SessionsAddTime" xml:space="preserve"><value>Add time</value></data>
+  <data name="Perm_SessionsCancelPaid" xml:space="preserve"><value>Cancel a paid session (refund)</value></data>
+  <data name="Perm_SessionsPauseResume" xml:space="preserve"><value>Pause and resume</value></data>
+  <data name="Perm_SessionsRemoveTime" xml:space="preserve"><value>Remove time (refund)</value></data>
+  <data name="Perm_SessionsStop" xml:space="preserve"><value>Stop a session</value></data>
+  <data name="Perm_SessionsTransfer" xml:space="preserve"><value>Move a session to another PC</value></data>
+  <data name="Quick_5Min" xml:space="preserve"><value>5 minutes left</value></data>
+  <data name="Quick_Closing" xml:space="preserve"><value>We close in 10 minutes</value></data>
+  <data name="Quick_Counter" xml:space="preserve"><value>Please come to the counter</value></data>
+  <data name="Quick_Volume" xml:space="preserve"><value>Please lower the volume</value></data>
+  <data name="Reports_BusiestHours" xml:space="preserve"><value>Busiest hours (sessions started)</value></data>
+  <data name="Reports_ByEmployee" xml:space="preserve"><value>Per employee</value></data>
+  <data name="Reports_ByMachine" xml:space="preserve"><value>Per PC</value></data>
+  <data name="Reports_HoursSold" xml:space="preserve"><value>Hours sold</value></data>
+  <data name="Reports_Income" xml:space="preserve"><value>Income</value></data>
+  <data name="Reports_IncomeByDay" xml:space="preserve"><value>Income per day</value></data>
+  <data name="Reports_Last7" xml:space="preserve"><value>Last 7 days</value></data>
+  <data name="Reports_LastMonth" xml:space="preserve"><value>Last month</value></data>
+  <data name="Reports_Refunds" xml:space="preserve"><value>Refunds</value></data>
+  <data name="Reports_Sessions" xml:space="preserve"><value>Sessions</value></data>
+  <data name="Reports_SessionsCount" xml:space="preserve"><value>{0} sessions</value></data>
+  <data name="Reports_SessionsWithFree" xml:space="preserve"><value>{0} ({1} free)</value></data>
+  <data name="Reports_Show" xml:space="preserve"><value>Show</value></data>
+  <data name="Reports_ThisMonth" xml:space="preserve"><value>This month</value></data>
+  <data name="Reports_Today" xml:space="preserve"><value>Today</value></data>
+  <data name="Reports_TodayIncome" xml:space="preserve"><value>Income today</value></data>
+  <data name="Role_Employee" xml:space="preserve"><value>Employee</value></data>
+  <data name="Role_Owner" xml:space="preserve"><value>Owner</value></data>
+  <data name="Rounding_Down" xml:space="preserve"><value>Always down</value></data>
+  <data name="Rounding_Nearest" xml:space="preserve"><value>Nearest</value></data>
+  <data name="Rounding_None" xml:space="preserve"><value>No rounding</value></data>
+  <data name="Rounding_Up" xml:space="preserve"><value>Always up</value></data>
+  <data name="Settings_AddBranch" xml:space="preserve"><value>Add branch</value></data>
+  <data name="Settings_AddBranchMessage" xml:space="preserve"><value>The new branch starts with the same price and currency as your first one.</value></data>
+  <data name="Settings_AddGroup" xml:space="preserve"><value>New group</value></data>
+  <data name="Settings_Backup" xml:space="preserve"><value>Backup</value></data>
+  <data name="Settings_BackupHint" xml:space="preserve"><value>The server also makes an automatic backup every day and keeps the last 14.</value></data>
+  <data name="Settings_BackupNow" xml:space="preserve"><value>Download backup</value></data>
+  <data name="Settings_BackupSaved" xml:space="preserve"><value>Backup saved.</value></data>
+  <data name="Settings_Branch" xml:space="preserve"><value>This branch</value></data>
+  <data name="Settings_BranchAdded" xml:space="preserve"><value>Branch added. Pick it at the top of the window.</value></data>
+  <data name="Settings_BranchName" xml:space="preserve"><value>Branch name</value></data>
+  <data name="Settings_ChangePin" xml:space="preserve"><value>Change admin PIN</value></data>
+  <data name="Settings_CurrencyCode" xml:space="preserve"><value>Currency code</value></data>
+  <data name="Settings_CurrencySymbol" xml:space="preserve"><value>Currency symbol</value></data>
+  <data name="Settings_Dark" xml:space="preserve"><value>Dark</value></data>
+  <data name="Settings_Decimals" xml:space="preserve"><value>Decimals</value></data>
+  <data name="Settings_DeleteGroupMessage" xml:space="preserve"><value>Its PCs go back to the branch price.</value></data>
+  <data name="Settings_DeleteGroupTitle" xml:space="preserve"><value>Delete {0}?</value></data>
+  <data name="Settings_EditGroup" xml:space="preserve"><value>Edit {0}</value></data>
+  <data name="Settings_GroupBranchRate" xml:space="preserve"><value>Branch price</value></data>
+  <data name="Settings_GroupMessage" xml:space="preserve"><value>PCs in this group are charged the group's price.</value></data>
+  <data name="Settings_GroupName" xml:space="preserve"><value>Group name</value></data>
+  <data name="Settings_GroupRate" xml:space="preserve"><value>Price per hour (empty = branch price)</value></data>
+  <data name="Settings_Groups" xml:space="preserve"><value>PC groups (optional)</value></data>
+  <data name="Settings_GroupsHint" xml:space="preserve"><value>Give some PCs a different price, for example a VIP area. Assign a PC to a group from its menu on the Machines page.</value></data>
+  <data name="Settings_HourlyRate" xml:space="preserve"><value>Price per hour</value></data>
+  <data name="Settings_InvalidNumbers" xml:space="preserve"><value>Check the price and the warning minutes.</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Language</value></data>
+  <data name="Settings_Light" xml:space="preserve"><value>Light</value></data>
+  <data name="Settings_Logo" xml:space="preserve"><value>Logo</value></data>
+  <data name="Settings_LogoHint" xml:space="preserve"><value>PNG or JPEG, up to 1 MB. Shown on every lock screen.</value></data>
+  <data name="Settings_PinLabel" xml:space="preserve"><value>New PIN (4 to 12 digits)</value></data>
+  <data name="Settings_PinMessage" xml:space="preserve"><value>This PIN closes the lock screen on a gaming PC (Ctrl+Shift+F12). Leave it empty to remove the PIN; then the lock screen cannot be closed at all.</value></data>
+  <data name="Settings_PinNotSet" xml:space="preserve"><value>No PIN set</value></data>
+  <data name="Settings_PinRule" xml:space="preserve"><value>Use 4 to 12 digits.</value></data>
+  <data name="Settings_PinSet" xml:space="preserve"><value>A PIN is set</value></data>
+  <data name="Settings_PinTitle" xml:space="preserve"><value>Admin PIN for the PCs</value></data>
+  <data name="Settings_PriceHint" xml:space="preserve"><value>A new price only applies to sessions started after you save. Running sessions keep their price.</value></data>
+  <data name="Settings_RemoveLogo" xml:space="preserve"><value>Remove</value></data>
+  <data name="Settings_Restore" xml:space="preserve"><value>Restore backup</value></data>
+  <data name="Settings_RestoreDone" xml:space="preserve"><value>The backup was accepted. The server is restarting; sign in again in a moment.</value></data>
+  <data name="Settings_RestoreMessage" xml:space="preserve"><value>Everything on the server is replaced by the backup: sessions, sales, employees and settings. The server restarts and everyone is signed out. The current data is kept on the server as a safety copy.</value></data>
+  <data name="Settings_RestoreTitle" xml:space="preserve"><value>Restore a backup</value></data>
+  <data name="Settings_Rounding" xml:space="preserve"><value>Rounding</value></data>
+  <data name="Settings_RoundingStep" xml:space="preserve"><value>Round to</value></data>
+  <data name="Settings_Saved" xml:space="preserve"><value>Saved.</value></data>
+  <data name="Settings_Server" xml:space="preserve"><value>Server</value></data>
+  <data name="Settings_Shop" xml:space="preserve"><value>Shop</value></data>
+  <data name="Settings_ShopLanguage" xml:space="preserve"><value>Language on the PCs and in exports</value></data>
+  <data name="Settings_Theme" xml:space="preserve"><value>Theme</value></data>
+  <data name="Settings_ThisComputer" xml:space="preserve"><value>This computer</value></data>
+  <data name="Settings_TimeZone" xml:space="preserve"><value>Time zone (for daily reports)</value></data>
+  <data name="Settings_UploadLogo" xml:space="preserve"><value>Upload logo</value></data>
+  <data name="Settings_Version" xml:space="preserve"><value>Dashboard version {0}</value></data>
+  <data name="Settings_WarningMinutes" xml:space="preserve"><value>Warn the customer (minutes before the end)</value></data>
+  <data name="Setup_BranchHint" xml:space="preserve"><value>e.g. Downtown</value></data>
+  <data name="Setup_BranchName" xml:space="preserve"><value>First branch</value></data>
+  <data name="Setup_FillOwner" xml:space="preserve"><value>Enter your name and a username.</value></data>
+  <data name="Setup_FillShop" xml:space="preserve"><value>Enter the shop name and the branch name.</value></data>
+  <data name="Setup_Finish" xml:space="preserve"><value>Create and sign in</value></data>
+  <data name="Setup_HourlyRate" xml:space="preserve"><value>Price per hour</value></data>
+  <data name="Setup_OwnerName" xml:space="preserve"><value>Your name</value></data>
+  <data name="Setup_PasswordAgain" xml:space="preserve"><value>Repeat the password</value></data>
+  <data name="Setup_PasswordMismatch" xml:space="preserve"><value>The passwords do not match.</value></data>
+  <data name="Setup_PasswordRule" xml:space="preserve"><value>Use at least 8 characters.</value></data>
+  <data name="Setup_RateHint" xml:space="preserve"><value>You can change it later in Settings.</value></data>
+  <data name="Setup_ShopName" xml:space="preserve"><value>Shop name</value></data>
+  <data name="Setup_Step1" xml:space="preserve"><value>Your shop</value></data>
+  <data name="Setup_Step2" xml:space="preserve"><value>Owner account</value></data>
+  <data name="Setup_Subtitle" xml:space="preserve"><value>Two quick steps and your shop is ready.</value></data>
+  <data name="Setup_Title" xml:space="preserve"><value>Welcome to TelloGameRoom</value></data>
+  <data name="Shell_NobodyOnDuty" xml:space="preserve"><value>Nobody is clocked in</value></data>
+  <data name="Shell_OnDuty" xml:space="preserve"><value>On duty: {0}</value></data>
+  <data name="Shell_SignOut" xml:space="preserve"><value>Sign out</value></data>
+  <data name="Shifts_Balanced" xml:space="preserve"><value>The cash is balanced.</value></data>
+  <data name="Shifts_Close" xml:space="preserve"><value>End shift</value></data>
+  <data name="Shifts_CloseMessage" xml:space="preserve"><value>Count all the cash in the drawer and enter the total.</value></data>
+  <data name="Shifts_CloseSelected" xml:space="preserve"><value>Close selected shift</value></data>
+  <data name="Shifts_CloseTitle" xml:space="preserve"><value>End the shift of {0}</value></data>
+  <data name="Shifts_ClosedSummary" xml:space="preserve"><value>Expected: {0}
+Counted: {1}
+
+{2}</value></data>
+  <data name="Shifts_ClosedTitle" xml:space="preserve"><value>Shift closed</value></data>
+  <data name="Shifts_CountedCash" xml:space="preserve"><value>Counted cash</value></data>
+  <data name="Shifts_Difference" xml:space="preserve"><value>Difference</value></data>
+  <data name="Shifts_ExpectedCash" xml:space="preserve"><value>Expected cash</value></data>
+  <data name="Shifts_History" xml:space="preserve"><value>Shifts of the last 30 days</value></data>
+  <data name="Shifts_NotClockedIn" xml:space="preserve"><value>You are not clocked in</value></data>
+  <data name="Shifts_NotClockedInHint" xml:space="preserve"><value>Start your shift to sell sessions. Count the cash in the drawer first.</value></data>
+  <data name="Shifts_Notes" xml:space="preserve"><value>Notes (optional)</value></data>
+  <data name="Shifts_OnDuty" xml:space="preserve"><value>Your shift is open</value></data>
+  <data name="Shifts_Open" xml:space="preserve"><value>Start shift</value></data>
+  <data name="Shifts_OpenMessage" xml:space="preserve"><value>Count the cash that is in the drawer right now.</value></data>
+  <data name="Shifts_OpenTitle" xml:space="preserve"><value>Start your shift</value></data>
+  <data name="Shifts_OpeningCash" xml:space="preserve"><value>Opening cash</value></data>
+  <data name="Shifts_Over" xml:space="preserve"><value>There is {0} too much.</value></data>
+  <data name="Shifts_Print" xml:space="preserve"><value>Shift report (PDF)</value></data>
+  <data name="Shifts_Refunds" xml:space="preserve"><value>Refunds</value></data>
+  <data name="Shifts_Sales" xml:space="preserve"><value>Sales</value></data>
+  <data name="Shifts_Short" xml:space="preserve"><value>{0} is missing.</value></data>
+  <data name="Shifts_StillOpen" xml:space="preserve"><value>Open</value></data>
+  <data name="Status_Free" xml:space="preserve"><value>Free</value></data>
+  <data name="Status_InUse" xml:space="preserve"><value>In use</value></data>
+  <data name="Status_InUseOffline" xml:space="preserve"><value>In use · offline</value></data>
+  <data name="Status_Offline" xml:space="preserve"><value>Offline</value></data>
+  <data name="Status_Paused" xml:space="preserve"><value>Paused</value></data>
+  <data name="Time_AddConfirm" xml:space="preserve"><value>Add time</value></data>
+  <data name="Time_AddTitle" xml:space="preserve"><value>Add time to {0}</value></data>
+  <data name="Time_Collect" xml:space="preserve"><value>Amount to collect</value></data>
+  <data name="Time_Custom" xml:space="preserve"><value>Other amount (minutes)</value></data>
+  <data name="Time_CustomHint" xml:space="preserve"><value>e.g. 45</value></data>
+  <data name="Time_Free" xml:space="preserve"><value>Free</value></data>
+  <data name="Time_FreeToggle" xml:space="preserve"><value>Free session (requires a reason)</value></data>
+  <data name="Time_Rate" xml:space="preserve"><value>{0} per hour</value></data>
+  <data name="Time_Refund" xml:space="preserve"><value>Amount to refund</value></data>
+  <data name="Time_RemoveConfirm" xml:space="preserve"><value>Remove time</value></data>
+  <data name="Time_RemoveTitle" xml:space="preserve"><value>Remove time from {0}</value></data>
+  <data name="Time_StartConfirm" xml:space="preserve"><value>Start session</value></data>
+  <data name="Time_StartTitle" xml:space="preserve"><value>Start session on {0}</value></data>
+</root>

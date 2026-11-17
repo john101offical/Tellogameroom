@@ -1,0 +1,66 @@
+<Window x:Class="TelloGameRoom.Machine.Views.TimerWidget"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:TelloGameRoom.Machine"
+        Title="TelloGameRoom timer" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True"
+        ShowActivated="False" Focusable="False" AllowsTransparency="True" Background="Transparent"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="Manual" FontFamily="{StaticResource UiFont}">
+  <Window.Resources>
+    <BooleanToVisibilityConverter x:Key="BoolVisible" />
+  </Window.Resources>
+  <!-- A small pill. Semi-transparent until the mouse is over it, so it never hides much of a game. -->
+  <Border x:Name="Pill" Margin="8" Padding="14,8" CornerRadius="16" Background="#E6101522" BorderThickness="1"
+          MouseLeftButtonDown="OnDrag" ToolTip="{Binding ShopName}">
+    <Border.Style>
+      <Style TargetType="Border">
+        <Setter Property="BorderBrush" Value="{StaticResource StrokeBrush}" />
+        <Setter Property="Opacity" Value="0.78" />
+        <Style.Triggers>
+          <Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Opacity" Value="1" />
+          </Trigger>
+          <DataTrigger Binding="{Binding IsLowTime}" Value="True">
+            <Setter Property="BorderBrush" Value="{StaticResource WarningBrush}" />
+            <Setter Property="Opacity" Value="1" />
+          </DataTrigger>
+        </Style.Triggers>
+      </Style>
+    </Border.Style>
+    <Border.ContextMenu>
+      <ContextMenu>
+        <MenuItem Header="{l:Tr Pin_Title}" Click="OnAdmin" />
+      </ContextMenu>
+    </Border.ContextMenu>
+    <StackPanel Orientation="Horizontal">
+      <Ellipse Width="8" Height="8" VerticalAlignment="Center" Margin="0,0,10,0">
+        <Ellipse.Style>
+          <Style TargetType="Ellipse">
+            <Setter Property="Fill" Value="{StaticResource SuccessBrush}" />
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding IsLowTime}" Value="True">
+                <Setter Property="Fill" Value="{StaticResource WarningBrush}" />
+              </DataTrigger>
+              <DataTrigger Binding="{Binding IsOffline}" Value="True">
+                <Setter Property="Fill" Value="{StaticResource DangerBrush}" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Ellipse.Style>
+      </Ellipse>
+      <TextBlock Text="{Binding RemainingText}" FontFamily="{StaticResource MonoFont}" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center">
+        <TextBlock.Style>
+          <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding IsLowTime}" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource WarningBrush}" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </TextBlock.Style>
+      </TextBlock>
+      <TextBlock Text="{l:Tr Widget_Offline}" Style="{StaticResource MutedText}" FontSize="12" Margin="12,0,0,0" VerticalAlignment="Center"
+                 Visibility="{Binding IsOffline, Converter={StaticResource BoolVisible}}" />
+    </StackPanel>
+  </Border>
+</Window>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Cmd_Restart" xml:space="preserve"><value>This PC will restart in a few seconds.</value></data>
+  <data name="Cmd_Shutdown" xml:space="preserve"><value>This PC will shut down in a few seconds.</value></data>
+  <data name="Conn_Connected" xml:space="preserve"><value>Connected</value></data>
+  <data name="Conn_Connecting" xml:space="preserve"><value>Connecting…</value></data>
+  <data name="Conn_Offline" xml:space="preserve"><value>No connection. Retrying…</value></data>
+  <data name="Lock_NotRegistered" xml:space="preserve"><value>This PC is no longer registered</value></data>
+  <data name="Lock_NotRegisteredHint" xml:space="preserve"><value>Ask the owner for a new pairing code.</value></data>
+  <data name="Lock_Paused" xml:space="preserve"><value>Session paused</value></data>
+  <data name="Lock_PausedHint" xml:space="preserve"><value>Your time is safe. Ask the staff to resume.</value></data>
+  <data name="Lock_PayAtCounter" xml:space="preserve"><value>Pay at the counter to start</value></data>
+  <data name="Msg_Dismiss" xml:space="preserve"><value>Close</value></data>
+  <data name="Msg_FromStaff" xml:space="preserve"><value>Message from the staff</value></data>
+  <data name="Pair_Button" xml:space="preserve"><value>Pair this PC</value></data>
+  <data name="Pair_Code" xml:space="preserve"><value>Pairing code</value></data>
+  <data name="Pair_ErrorAddress" xml:space="preserve"><value>The server address is not valid.</value></data>
+  <data name="Pair_ErrorCertificate" xml:space="preserve"><value>The server's certificate is not trusted. Enter its fingerprint.</value></data>
+  <data name="Pair_ErrorCode" xml:space="preserve"><value>The pairing code is wrong, expired or already used.</value></data>
+  <data name="Pair_ErrorGeneric" xml:space="preserve"><value>Pairing failed: {0}</value></data>
+  <data name="Pair_ErrorNetwork" xml:space="preserve"><value>Could not reach the server. Check the address and the network.</value></data>
+  <data name="Pair_Fingerprint" xml:space="preserve"><value>Certificate fingerprint (optional)</value></data>
+  <data name="Pair_FingerprintHint" xml:space="preserve"><value>Only for servers without a domain name. See the deployment guide.</value></data>
+  <data name="Pair_Server" xml:space="preserve"><value>Server address</value></data>
+  <data name="Pair_ServerHint" xml:space="preserve"><value>e.g. 203.0.113.5 or shop.example.com</value></data>
+  <data name="Pair_Subtitle" xml:space="preserve"><value>Enter the server address and the pairing code shown in the dashboard.</value></data>
+  <data name="Pair_Title" xml:space="preserve"><value>Set up this PC</value></data>
+  <data name="Pin_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Pin_Confirm" xml:space="preserve"><value>Unlock and exit</value></data>
+  <data name="Pin_NotSet" xml:space="preserve"><value>No admin PIN is set. Set one in the dashboard settings.</value></data>
+  <data name="Pin_Prompt" xml:space="preserve"><value>Enter the admin PIN to close the lock screen.</value></data>
+  <data name="Pin_Throttled" xml:space="preserve"><value>Too many attempts. Wait {0} seconds.</value></data>
+  <data name="Pin_Title" xml:space="preserve"><value>Administrator access</value></data>
+  <data name="Pin_Wrong" xml:space="preserve"><value>Wrong PIN.</value></data>
+  <data name="Warn_Body" xml:space="preserve"><value>{0} left. Pay at the counter to keep playing.</value></data>
+  <data name="Warn_Dismiss" xml:space="preserve"><value>OK</value></data>
+  <data name="Warn_Title" xml:space="preserve"><value>Your time is almost up</value></data>
+  <data name="Widget_Offline" xml:space="preserve"><value>Offline: the timer keeps running</value></data>
+</root>

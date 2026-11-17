@@ -1,0 +1,66 @@
+<ui:FluentWindow x:Class="TelloGameRoom.Dashboard.Views.TimeDialog"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:l="clr-namespace:TelloGameRoom.Dashboard"
+                 Width="520" SizeToContent="Height" ResizeMode="NoResize" ShowInTaskbar="False"
+                 WindowStartupLocation="CenterOwner" ExtendsContentIntoTitleBar="True" WindowBackdropType="None">
+  <ui:FluentWindow.Resources>
+    <l:BoolVisibilityConverter x:Key="BoolVisible" />
+  </ui:FluentWindow.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <ui:TitleBar Title="{Binding Title}" ShowMaximize="False" ShowMinimize="False" />
+    <StackPanel Grid.Row="1" Margin="24,4,24,24">
+
+      <!-- Presets: one click each -->
+      <UniformGrid Columns="4" Margin="-5,0">
+        <ToggleButton x:Name="FirstPreset" Style="{StaticResource PresetButton}" Margin="5" Content="30 min" IsChecked="{Binding IsPreset30, Mode=OneWay}"
+                      Command="{Binding PresetCommand}" CommandParameter="30" />
+        <ToggleButton x:Name="HourPreset" Style="{StaticResource PresetButton}" Margin="5" Content="1 h" IsChecked="{Binding IsPreset60, Mode=OneWay}"
+                      Command="{Binding PresetCommand}" CommandParameter="60" />
+        <ToggleButton Style="{StaticResource PresetButton}" Margin="5" Content="2 h" IsChecked="{Binding IsPreset120, Mode=OneWay}"
+                      Command="{Binding PresetCommand}" CommandParameter="120" />
+        <ToggleButton Style="{StaticResource PresetButton}" Margin="5" Content="3 h" IsChecked="{Binding IsPreset180, Mode=OneWay}"
+                      Command="{Binding PresetCommand}" CommandParameter="180" />
+      </UniformGrid>
+
+      <TextBlock Text="{l:Tr Time_Custom}" Style="{StaticResource FieldLabel}" />
+      <ui:TextBox Text="{Binding CustomMinutes, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="{l:Tr Time_CustomHint}" MaxLength="4" />
+
+      <!-- The number the staff member needs: big and unmissable -->
+      <Border Style="{StaticResource Card}" Margin="0,20,0,0" Padding="20,16">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="{Binding AmountLabel}" Style="{StaticResource Muted}" />
+            <TextBlock Text="{Binding DurationText}" Style="{StaticResource Body}" FontSize="18" FontWeight="SemiBold" Margin="0,2,0,0" />
+            <TextBlock Text="{Binding RateText}" Style="{StaticResource Muted}" FontSize="12" Margin="0,2,0,0" />
+          </StackPanel>
+          <TextBlock Grid.Column="1" Text="{Binding AmountText}" FontSize="44" FontWeight="Bold" VerticalAlignment="Center"
+                     Foreground="{StaticResource BrandBrush}" />
+        </Grid>
+      </Border>
+
+      <CheckBox Content="{l:Tr Time_FreeToggle}" IsChecked="{Binding IsFree}" Margin="0,16,0,0"
+                Visibility="{Binding CanGiveFree, Converter={StaticResource BoolVisible}}" />
+
+      <StackPanel Visibility="{Binding NeedsReason, Converter={StaticResource BoolVisible}}">
+        <TextBlock Text="{l:Tr Common_Reason}" Style="{StaticResource FieldLabel}" />
+        <ui:TextBox Text="{Binding Reason, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="{l:Tr Common_ReasonHint}" MaxLength="300" />
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,24,0,0">
+        <ui:Button Content="{l:Tr Common_Cancel}" IsCancel="True" Margin="0,0,10,0" MinWidth="96" />
+        <ui:Button Content="{Binding ConfirmText}" Appearance="Primary" IsDefault="True" MinWidth="170" Height="40" FontWeight="SemiBold"
+                   Command="{Binding ConfirmCommand}" IsEnabled="{Binding CanConfirm}" />
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</ui:FluentWindow>

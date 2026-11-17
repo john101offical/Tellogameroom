@@ -1,0 +1,52 @@
+# TelloGameRoom server behind Caddy (TLS).
+#
+#   cd deploy/docker
+#   cp .env.example .env      # then edit .env
+#   docker compose up -d --build
+#
+# Only Caddy is reachable from the internet (ports 80 and 443). The server itself listens on the private
+# Docker network. All state lives in the "tello-data" volume: database, signing key, logs and backups.
+
+services:
+  server:
+    build:
+      context: ../..
+      dockerfile: deploy/docker/Dockerfile
+    image: tellogameroom-server:latest
+    restart: unless-stopped
+    environment:
+      # Believe X-Forwarded-For only when it comes from Caddy on this private network.
+      Security__TrustedProxies__0: 172.28.0.0/24
+      TZ: ${TZ:-America/Bogota}
+    volumes:
+      - tello-data:/data
+    networks:
+      - tello
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - server
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      TELLO_ADDRESS: ${TELLO_ADDRESS:?Set TELLO_ADDRESS in .env}
+    volumes:
+      - ../caddy/${TELLO_CADDYFILE:-Caddyfile.ip}:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks:
+      - tello
+
+networks:
+  tello:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24
+
+volumes:
+  tello-data:
+  caddy-data:
+  caddy-config:

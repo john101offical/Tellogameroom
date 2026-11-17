@@ -1,0 +1,139 @@
+<UserControl x:Class="TelloGameRoom.Dashboard.Views.ReportsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:l="clr-namespace:TelloGameRoom.Dashboard"
+             xmlns:c="clr-namespace:TelloGameRoom.Dashboard.Controls">
+  <UserControl.Resources>
+    <l:BoolVisibilityConverter x:Key="BoolVisible" />
+    <l:NotEmptyVisibilityConverter x:Key="NotEmpty" />
+    <DataTemplate x:Key="TotalRowTemplate">
+      <Grid Margin="0,5">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="130" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" MinWidth="96" />
+          <ColumnDefinition Width="Auto" MinWidth="70" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding Name}" Style="{StaticResource Body}" TextWrapping="NoWrap" VerticalAlignment="Center" />
+        <ProgressBar Grid.Column="1" Value="{Binding Share, Mode=OneWay}" Maximum="1" Height="6" Margin="10,0" VerticalAlignment="Center" />
+        <TextBlock Grid.Column="2" Text="{Binding Income}" Style="{StaticResource Body}" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Center" />
+        <TextBlock Grid.Column="3" Text="{Binding Hours}" Style="{StaticResource Muted}" HorizontalAlignment="Right" VerticalAlignment="Center" />
+      </Grid>
+    </DataTemplate>
+  </UserControl.Resources>
+  <ScrollViewer VerticalScrollBarVisibility="Auto" Focusable="False">
+    <StackPanel Margin="{StaticResource PagePadding}">
+
+      <!-- Header -->
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+          <TextBlock Style="{StaticResource PageTitle}" Text="{l:Tr Nav_Overview}" Visibility="{Binding IsOverview, Converter={StaticResource BoolVisible}}" />
+          <TextBlock Style="{StaticResource PageTitle}" Text="{l:Tr Nav_Reports}" Visibility="{Binding IsOverview, Converter={StaticResource BoolVisible}, ConverterParameter=invert}" />
+          <TextBlock Text="{Binding PeriodText}" Style="{StaticResource Muted}" Margin="0,2,0,0" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"
+                    Visibility="{Binding IsOverview, Converter={StaticResource BoolVisible}, ConverterParameter=invert}">
+          <ui:Button Content="{l:Tr Common_ExportCsv}" Icon="{ui:SymbolIcon ArrowDownload24}" Command="{Binding ExportCsvCommand}" Margin="0,0,8,0"
+                     Visibility="{Binding CanExport, Converter={StaticResource BoolVisible}}" />
+          <ui:Button Content="{l:Tr Common_ExportPdf}" Icon="{ui:SymbolIcon DocumentText24}" Command="{Binding ExportPdfCommand}"
+                     Visibility="{Binding CanExport, Converter={StaticResource BoolVisible}}" />
+        </StackPanel>
+      </Grid>
+
+      <ui:InfoBar Severity="Error" IsOpen="True" IsClosable="False" Message="{Binding Error}" Margin="0,12,0,0"
+                  Visibility="{Binding Error, Converter={StaticResource NotEmpty}}" />
+
+      <!-- Range picker (Reports only) -->
+      <WrapPanel Margin="0,14,0,0" Visibility="{Binding IsOverview, Converter={StaticResource BoolVisible}, ConverterParameter=invert}">
+        <ui:Button Content="{l:Tr Reports_Today}" Command="{Binding TodayCommand}" Margin="0,0,8,8" />
+        <ui:Button Content="{l:Tr Reports_Last7}" Command="{Binding Last7Command}" Margin="0,0,8,8" />
+        <ui:Button Content="{l:Tr Reports_ThisMonth}" Command="{Binding ThisMonthCommand}" Margin="0,0,8,8" />
+        <ui:Button Content="{l:Tr Reports_LastMonth}" Command="{Binding LastMonthCommand}" Margin="0,0,20,8" />
+        <DatePicker SelectedDate="{Binding From}" Width="150" Margin="0,0,8,8" />
+        <DatePicker SelectedDate="{Binding To}" Width="150" Margin="0,0,8,8" />
+        <ui:Button Content="{l:Tr Reports_Show}" Appearance="Primary" Command="{Binding LoadCommand}" Margin="0,0,0,8" />
+      </WrapPanel>
+
+      <!-- KPIs -->
+      <UniformGrid Columns="4" Margin="-6,10,-6,0">
+        <Border Style="{StaticResource Card}" Margin="6">
+          <StackPanel>
+            <TextBlock Text="{l:Tr Reports_Income}" Style="{StaticResource Muted}" />
+            <TextBlock Text="{Binding IncomeText}" Style="{StaticResource KpiValue}" Foreground="{StaticResource BrandBrush}" />
+          </StackPanel>
+        </Border>
+        <Border Style="{StaticResource Card}" Margin="6">
+          <StackPanel>
+            <TextBlock Text="{l:Tr Reports_Sessions}" Style="{StaticResource Muted}" />
+            <TextBlock Text="{Binding SessionsText}" Style="{StaticResource KpiValue}" />
+          </StackPanel>
+        </Border>
+        <Border Style="{StaticResource Card}" Margin="6">
+          <StackPanel>
+            <TextBlock Text="{l:Tr Reports_HoursSold}" Style="{StaticResource Muted}" />
+            <TextBlock Text="{Binding HoursText}" Style="{StaticResource KpiValue}" />
+          </StackPanel>
+        </Border>
+        <Border Style="{StaticResource Card}" Margin="6">
+          <Grid>
+            <StackPanel Visibility="{Binding IsOverview, Converter={StaticResource BoolVisible}}">
+              <TextBlock Text="{l:Tr Reports_TodayIncome}" Style="{StaticResource Muted}" />
+              <TextBlock Text="{Binding TodayIncomeText}" Style="{StaticResource KpiValue}" />
+            </StackPanel>
+            <StackPanel Visibility="{Binding IsOverview, Converter={StaticResource BoolVisible}, ConverterParameter=invert}">
+              <TextBlock Text="{l:Tr Reports_Refunds}" Style="{StaticResource Muted}" />
+              <TextBlock Text="{Binding RefundsText}" Style="{StaticResource KpiValue}" />
+            </StackPanel>
+          </Grid>
+        </Border>
+      </UniformGrid>
+
+      <!-- Charts -->
+      <Grid Margin="-6,6,-6,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="3*" />
+          <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Border Style="{StaticResource Card}" Margin="6">
+          <StackPanel>
+            <TextBlock Text="{l:Tr Reports_IncomeByDay}" Style="{StaticResource SectionTitle}" />
+            <c:BarChart Items="{Binding IncomeByDay}" Height="210" BarBrush="{StaticResource BrandBrush}"
+                        LabelBrush="{DynamicResource TextFillColorSecondaryBrush}" GridBrush="{DynamicResource ControlStrokeColorDefaultBrush}" />
+          </StackPanel>
+        </Border>
+        <Border Grid.Column="1" Style="{StaticResource Card}" Margin="6">
+          <StackPanel>
+            <TextBlock Text="{l:Tr Reports_BusiestHours}" Style="{StaticResource SectionTitle}" />
+            <c:BarChart Items="{Binding SessionsByHour}" Height="210" BarBrush="{StaticResource StatusFreeBrush}"
+                        LabelBrush="{DynamicResource TextFillColorSecondaryBrush}" GridBrush="{DynamicResource ControlStrokeColorDefaultBrush}" />
+          </StackPanel>
+        </Border>
+      </Grid>
+
+      <!-- Breakdown -->
+      <Grid Margin="-6,6,-6,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Style="{StaticResource Card}" Margin="6" VerticalAlignment="Top">
+          <StackPanel>
+            <TextBlock Text="{l:Tr Reports_ByEmployee}" Style="{StaticResource SectionTitle}" />
+            <ItemsControl ItemsSource="{Binding ByEmployee}" ItemTemplate="{StaticResource TotalRowTemplate}" />
+          </StackPanel>
+        </Border>
+        <Border Grid.Column="1" Style="{StaticResource Card}" Margin="6" VerticalAlignment="Top">
+          <StackPanel>
+            <TextBlock Text="{l:Tr Reports_ByMachine}" Style="{StaticResource SectionTitle}" />
+            <ItemsControl ItemsSource="{Binding ByMachine}" ItemTemplate="{StaticResource TotalRowTemplate}" />
+          </StackPanel>
+        </Border>
+      </Grid>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>
