@@ -156,23 +156,21 @@ public partial class App : Application
         }
     }
 
-    private void ExitForMaintenance()
+    private async void ExitForMaintenance()
     {
-        _guard.EnterMaintenance();
-        _guard.ReportLocked(false);
         _keyboard.Disable();
         if (_lockWindow is not null)
         {
             _lockWindow.AllowClose = true;
+            _lockWindow.Hide();
         }
 
-        // Give the guard a moment to read the message before the process disappears.
-        var timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(600) };
-        timer.Tick += (_, _) =>
+        // Wait until the guard has confirmed, so it does not start the app straight back up.
+        if (!await _guard.EnterMaintenanceAsync())
         {
-            timer.Stop();
-            Shutdown();
-        };
-        timer.Start();
+            Log.Warning("MachineGuard did not confirm maintenance mode; it may start the app again");
+        }
+
+        Shutdown();
     }
 }

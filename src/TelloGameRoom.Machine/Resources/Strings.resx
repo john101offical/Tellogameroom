@@ -8,6 +8,7 @@
   <data name="Cmd_Shutdown" xml:space="preserve"><value>This PC will shut down in a few seconds.</value></data>
   <data name="Conn_Connected" xml:space="preserve"><value>Connected</value></data>
   <data name="Conn_Connecting" xml:space="preserve"><value>Connecting…</value></data>
+  <data name="Conn_NotPaired" xml:space="preserve"><value>Not set up yet · press Ctrl+Shift+F12 to close</value></data>
   <data name="Conn_Offline" xml:space="preserve"><value>No connection. Retrying…</value></data>
   <data name="Lock_NotRegistered" xml:space="preserve"><value>This PC is no longer registered</value></data>
   <data name="Lock_NotRegisteredHint" xml:space="preserve"><value>Ask the owner for a new pairing code.</value></data>

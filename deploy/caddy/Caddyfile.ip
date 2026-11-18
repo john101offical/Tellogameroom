@@ -1,24 +1,20 @@
 # For a server reached by IP address only (no domain name).
 #
-# Public certificate authorities such as Let's Encrypt do not issue ordinary certificates for bare IP addresses,
-# so Caddy acts as its own small authority here. Traffic is fully encrypted. To also be sure they are talking to
-# *your* server, the Dashboard and Machine apps "pin" the fingerprint of Caddy's root certificate:
+# Public certificate authorities such as Let's Encrypt do not issue ordinary certificates for bare IP addresses, so
+# this uses a self-signed certificate made by make-cert.sh. Traffic is fully encrypted. The Dashboard and Machine
+# apps "pin" the certificate's fingerprint, which is how they know they are talking to *your* server:
 #
-#   sh deploy/caddy/fingerprint.sh
+#   sh deploy/caddy/make-cert.sh
 #
-# Type that fingerprint once on each client (or pass it to the installer with /FINGERPRINT=...).
+# prints the fingerprint. Type it once on each client (or pass it to the installer with /FINGERPRINT=...).
 
 {
-	# Do not try to install the root certificate inside the container.
-	skip_install_trust
-
-	# Clients that connect by IP address send no server name in the TLS handshake. Tell Caddy which
-	# certificate to present in that case; without this the handshake fails behind Docker's private network.
+	# Clients that connect by IP address send no server name in the TLS handshake; serve this site's certificate anyway.
 	default_sni {$TELLO_ADDRESS}
 }
 
 https://{$TELLO_ADDRESS} {
-	tls internal
+	tls /etc/caddy/certs/server.crt /etc/caddy/certs/server.key
 	encode zstd gzip
 
 	# WebSockets (SignalR) and REST both go to the server.

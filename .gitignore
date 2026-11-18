@@ -16,3 +16,4 @@ logs/
 appsettings.*.local.json
 deploy/installer/Output/
 deploy/installer/publish/
+deploy/caddy/certs/

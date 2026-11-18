@@ -142,5 +142,9 @@
   "Cmd_Shutdown": [
     "This PC will shut down in a few seconds.",
     "Este equipo se apagará en unos segundos."
+  ],
+  "Conn_NotPaired": [
+    "Not set up yet · press Ctrl+Shift+F12 to close",
+    "Aún no configurado · pulsa Ctrl+Shift+F12 para cerrar"
   ]
 }
