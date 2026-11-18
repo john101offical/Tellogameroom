@@ -77,44 +77,97 @@ public sealed class KeyboardBlocker : IDisposable
 }
 
 /// <summary>
-/// One-way notifications to the MachineGuard service over a named pipe. The guard uses them to toggle the
-/// Task Manager policy and to know when the owner closed the app on purpose. If the guard is not installed,
-/// messages are silently dropped: the app works without it, just with weaker protection.
+/// Notifications to the MachineGuard service over a named pipe. The guard uses them to toggle the Task Manager
+/// policy and to know when the owner closed the app on purpose. Each message is acknowledged by the guard, so the
+/// app knows it arrived. If the guard is not installed, messages fail quietly (logged): the app works without it,
+/// just with weaker protection.
 /// </summary>
 public sealed class GuardClient
 {
     public const string PipeName = "TelloGameRoom.MachineGuard";
-    private string? _last;
+    private const int Attempts = 3;
+    private static readonly TimeSpan AttemptTimeout = TimeSpan.FromSeconds(1);
 
-    public void ReportLocked(bool locked) => Send(locked ? "STATE LOCKED" : "STATE UNLOCKED", onlyIfChanged: true);
+    // One message at a time: the guard serves a single pipe instance.
+    private readonly SemaphoreSlim _gate = new(1, 1);
+    private string? _lastDelivered;
+    private bool _failureLogged;
 
-    /// <summary>The owner entered the PIN: stop relaunching the app until the next sign-in or reboot.</summary>
-    public void EnterMaintenance() => Send("MAINTENANCE ON", onlyIfChanged: false);
-
-    private void Send(string message, bool onlyIfChanged)
+    public void ReportLocked(bool locked)
     {
-        if (onlyIfChanged && message == _last)
+        var message = locked ? "STATE LOCKED" : "STATE UNLOCKED";
+        _ = Task.Run(async () =>
         {
-            return;
-        }
-
-        _last = message;
-        _ = Task.Run(() =>
-        {
-            try
+            if (message != _lastDelivered && await SendAsync(message))
             {
-                using var pipe = new NamedPipeClientStream(".", PipeName, PipeDirection.Out);
-                pipe.Connect(500);
-                using var writer = new StreamWriter(pipe, new UTF8Encoding(false));
-                writer.WriteLine(message);
-                writer.Flush();
-            }
-            catch (Exception ex) when (ex is IOException or TimeoutException or UnauthorizedAccessException)
-            {
-                // Guard not running. Remember nothing so the next state change is sent again.
-                _last = null;
+                _lastDelivered = message;
             }
         });
+    }
+
+    /// <summary>The owner entered the PIN: stop relaunching the app until the next sign-in or reboot.</summary>
+    /// <returns>True when the guard confirmed it, or false when it could not be reached.</returns>
+    public async Task<bool> EnterMaintenanceAsync()
+    {
+        var delivered = await SendAsync("MAINTENANCE ON");
+        if (delivered)
+        {
+            _lastDelivered = null;
+        }
+
+        return delivered;
+    }
+
+    private async Task<bool> SendAsync(string message)
+    {
+        await _gate.WaitAsync();
+        try
+        {
+            for (var attempt = 1; attempt <= Attempts; attempt++)
+            {
+                try
+                {
+                    using var timeout = new CancellationTokenSource(AttemptTimeout);
+                    await using var pipe = new NamedPipeClientStream(".", PipeName, PipeDirection.InOut, PipeOptions.Asynchronous);
+                    await pipe.ConnectAsync(timeout.Token);
+                    using var writer = new StreamWriter(pipe, new UTF8Encoding(false), leaveOpen: true);
+                    await writer.WriteLineAsync(message);
+                    await writer.FlushAsync(timeout.Token);
+                    using var reader = new StreamReader(pipe, new UTF8Encoding(false), leaveOpen: true);
+                    var reply = await reader.ReadLineAsync(timeout.Token);
+                    if (reply == "OK")
+                    {
+                        _failureLogged = false;
+                        return true;
+                    }
+
+                    Serilog.Log.Warning("MachineGuard did not accept {Message}: {Reply}", message, reply ?? "(no reply)");
+                    return false;
+                }
+                catch (Exception ex) when (ex is IOException or TimeoutException or UnauthorizedAccessException or OperationCanceledException)
+                {
+                    if (attempt == Attempts)
+                    {
+                        // Logged once per outage, so a PC without the guard does not fill its log.
+                        if (!_failureLogged || message == "MAINTENANCE ON")
+                        {
+                            Serilog.Log.Warning("Could not reach MachineGuard to send {Message}: {Error}", message, ex.Message);
+                            _failureLogged = true;
+                        }
+
+                        return false;
+                    }
+
+                    await Task.Delay(200);
+                }
+            }
+
+            return false;
+        }
+        finally
+        {
+            _gate.Release();
+        }
     }
 }
 

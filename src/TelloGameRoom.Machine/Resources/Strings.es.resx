@@ -8,6 +8,7 @@
   <data name="Cmd_Shutdown" xml:space="preserve"><value>Este equipo se apagará en unos segundos.</value></data>
   <data name="Conn_Connected" xml:space="preserve"><value>Conectado</value></data>
   <data name="Conn_Connecting" xml:space="preserve"><value>Conectando…</value></data>
+  <data name="Conn_NotPaired" xml:space="preserve"><value>Aún no configurado · pulsa Ctrl+Shift+F12 para cerrar</value></data>
   <data name="Conn_Offline" xml:space="preserve"><value>Sin conexión. Reintentando…</value></data>
   <data name="Lock_NotRegistered" xml:space="preserve"><value>Este equipo ya no está registrado</value></data>
   <data name="Lock_NotRegisteredHint" xml:space="preserve"><value>Pide al dueño un nuevo código de vinculación.</value></data>

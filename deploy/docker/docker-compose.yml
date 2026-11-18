@@ -35,6 +35,8 @@ services:
       TELLO_ADDRESS: ${TELLO_ADDRESS:?Set TELLO_ADDRESS in .env}
     volumes:
       - ../caddy/${TELLO_CADDYFILE:-Caddyfile.ip}:/etc/caddy/Caddyfile:ro
+      # Certificate made by deploy/caddy/make-cert.sh (IP-only setup). Unused with Caddyfile.domain.
+      - ../caddy/certs:/etc/caddy/certs:ro
       - caddy-data:/data
       - caddy-config:/config
     networks:

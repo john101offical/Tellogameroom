@@ -52,7 +52,7 @@ All traffic is encrypted either way. The difference is how the Windows apps know
 | | A. IP address only | B. With a host name |
 |---|---|---|
 | You need | Nothing extra | A name that points to your IP. A free dynamic-DNS name works. |
-| Certificate | Issued by Caddy itself | Let's Encrypt, automatic |
+| Certificate | Self-signed, made once by `make-cert.sh`, valid 10 years | Let's Encrypt, automatic |
 | On each client | Enter the server's **fingerprint** once (or pass it to the installer) | Nothing: just the host name |
 | Caddyfile | `Caddyfile.ip` | `Caddyfile.domain` |
 
@@ -60,8 +60,8 @@ Since you have a plain IPv4 address, **option A** works today. Option B is less 
 switch later by changing two lines in `.env` and re-entering the address on the clients.
 
 Why the fingerprint: public certificate authorities do not hand out ordinary certificates for bare IP addresses, so
-in option A Caddy signs its own. The apps cannot verify that through the usual chain, so they are told the
-SHA-256 fingerprint of Caddy's root certificate and accept only that. Without the fingerprint the apps refuse to connect.
+in option A the server uses a self-signed certificate. The apps cannot verify that through the usual chain, so they
+are told its SHA-256 fingerprint and accept only that certificate. Without the fingerprint the apps refuse to connect.
 
 ## 4. Start the server
 
@@ -80,6 +80,12 @@ cp .env.example .env
 Edit `.env`: set `TELLO_ADDRESS` to your IP address (option A) or host name (option B), and for option B set
 `TELLO_CADDYFILE=Caddyfile.domain`.
 
+For option A, create the certificate. This prints the fingerprint; keep it, you will type it on the clients:
+
+```bash
+sh ../caddy/make-cert.sh
+```
+
 ```bash
 sudo docker compose up -d --build
 ```
@@ -96,14 +102,14 @@ curl -k https://203.0.113.5/health
 
 The second command should print `{"status":"ok"}`.
 
-For option A, print the fingerprint and keep it; you will type it on the clients:
+To see the fingerprint again later:
 
 ```bash
-sudo sh ../caddy/fingerprint.sh
+sh ../caddy/fingerprint.sh
 ```
 
-Caddy's root certificate is valid for about ten years and is stored in the `caddy-data` volume. If you ever delete
-that volume, a new one is created and every client needs the new fingerprint.
+The certificate is in `deploy/caddy/certs` and is valid for ten years. It is not in git. If you delete that folder
+(or move to a new VPS without copying it), `make-cert.sh` creates a new one and every client needs the new fingerprint.
 
 ### What is stored where
 
@@ -235,7 +241,7 @@ them, go through this list on one counter PC and one gaming PC and report anythi
 
 | Symptom | Check |
 |---|---|
-| The apps say the certificate is not trusted | Option A: the fingerprint is missing or mistyped. Run `fingerprint.sh` again. |
+| The apps say the certificate is not trusted | Option A: the fingerprint is missing or mistyped. Run `fingerprint.sh` again and compare. |
 | The apps cannot reach the server | `curl -k https://<address>/health` from another network; the firewall; `sudo docker compose logs caddy`. |
 | A PC shows "This PC is no longer registered" | It was deleted, disabled or re-paired. Create a new pairing code from its menu. |
 | Dashboard shows "Reconnecting…" | Network between the counter and the VPS. Timers keep running; the grid resyncs when the connection returns. |

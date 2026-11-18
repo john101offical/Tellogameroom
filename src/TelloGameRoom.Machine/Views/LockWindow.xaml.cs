@@ -55,6 +55,12 @@ public partial class LockWindow : Window
             return;
         }
 
+        if (_viewModel.CanExitWithoutPin)
+        {
+            _viewModel.ExitUnpaired();
+            return;
+        }
+
         _pinOpen = true;
         try
         {
